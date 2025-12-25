@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alternative Hypothesis | Production-Ready AI Implementation</title>
+    <meta name="description" content="We design, build, and deploy AI systems tailored to real business workflows. Practical ROI, infrastructure-aware implementations, and long-term maintainability.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span class="logo-mark">H₀</span>
+                <span class="logo-text">Alternative Hypothesis</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#industries">Industries</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+            </ul>
+            <a href="#contact" class="nav-cta">Start a Project</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="grid-pattern"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">AI Implementation Partners</div>
+            <h1>We build AI systems<br>that actually ship.</h1>
+            <p class="hero-subtitle">
+                From proof-of-concept to production deployment. We design, build, and maintain 
+                AI solutions tailored to your infrastructure, team, and business objectives.
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Schedule a Discovery Call</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">94%</span>
+                    <span class="stat-label">Production success rate</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">6 weeks</span>
+                    <span class="stat-label">Average time to MVP</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value">$2.4M+</span>
+                    <span class="stat-label">Client cost savings (2024)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Clients Bar -->
+    <section class="clients-bar">
+        <div class="container">
+            <p class="clients-label">Trusted by technical teams at</p>
+            <div class="clients-logos">
+                <span class="client-logo">Meridian Health</span>
+                <span class="client-logo">Vertex Labs</span>
+                <span class="client-logo">Norwood Financial</span>
+                <span class="client-logo">Atlas Logistics</span>
+                <span class="client-logo">Prism Analytics</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section class="what-we-do" id="what-we-do">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">What We Do</span>
+                <h2>End-to-end AI implementation.<br>Not just strategy decks.</h2>
+                <p class="section-desc">
+                    We're engineers and ML practitioners who've shipped AI systems at scale. 
+                    We partner with your team to design, build, and deploy solutions that 
+                    integrate with your existing infrastructure and deliver measurable results.
+                </p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 9h6v6H9z"/>
+                        </svg>
+                    </div>
+                    <h3>LLM Integration</h3>
+                    <p>Internal tools, automation workflows, and copilot interfaces built on OpenAI, Anthropic, or open-source models.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+                            <path d="M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+                        </svg>
+                    </div>
+                    <h3>Custom ML Models</h3>
+                    <p>Purpose-built models for classification, extraction, prediction, and domain-specific use cases.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16v16H4z"/>
+                            <path d="M4 12h16M12 4v16"/>
+                        </svg>
+                    </div>
+                    <h3>Workflow Automation</h3>
+                    <p>Intelligent document processing, data extraction, and end-to-end business process automation.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <path d="M12 22V12M3.27 6.96L12 12l8.73-5.04"/>
+                        </svg>
+                    </div>
+                    <h3>Data Infrastructure</h3>
+                    <p>Pipelines, vector databases, and storage systems optimized for ML workloads and real-time inference.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="6" width="20" height="12" rx="2"/>
+                            <path d="M6 12h.01M10 12h.01M14 12h.01M18 12h.01"/>
+                        </svg>
+                    </div>
+                    <h3>Flexible Deployment</h3>
+                    <p>On-premise, cloud, or hybrid deployments. We work with your security requirements and existing stack.</p>
+                </div>
+                <div class="capability-card">
+                    <div class="capability-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Data Services</h3>
+                    <p>Labeling, annotation, cleaning, and dataset design for training high-quality models.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Detail -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Services</span>
+                <h2>Two practice areas.<br>One integrated approach.</h2>
+            </div>
+            
+            <div class="service-block">
+                <div class="service-info">
+                    <div class="service-number">01</div>
+                    <h3>AI Implementation</h3>
+                    <p>
+                        We take AI projects from concept to production. Our team handles architecture design, 
+                        model selection, integration, testing, and deployment—working alongside your engineers 
+                        to ensure knowledge transfer and long-term maintainability.
+                    </p>
+                    <ul class="service-list">
+                        <li>
+                            <strong>LLM Integration</strong>
+                            <span>Build internal tools, customer-facing assistants, and workflow copilots using frontier or open-source models</span>
+                        </li>
+                        <li>
+                            <strong>Custom ML Models</strong>
+                            <span>Train and deploy models for classification, entity extraction, forecasting, and anomaly detection</span>
+                        </li>
+                        <li>
+                            <strong>Workflow Automation</strong>
+                            <span>Automate document processing, data entry, approval workflows, and cross-system orchestration</span>
+                        </li>
+                        <li>
+                            <strong>Infrastructure & Deployment</strong>
+                            <span>Design data pipelines, vector stores, and inference infrastructure for cloud, on-prem, or hybrid environments</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Discuss Your Project →</a>
+                </div>
+                <div class="service-visual">
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-title">pipeline.py</span>
+                        </div>
+                        <pre><code><span class="code-keyword">class</span> <span class="code-class">ProductionPipeline</span>:
+    <span class="code-keyword">def</span> <span class="code-func">__init__</span>(self, config):
+        self.model = load_model(config)
+        self.vector_store = init_store()
+        self.metrics = MetricsCollector()
+    
+    <span class="code-keyword">async def</span> <span class="code-func">process</span>(self, input):
+        embeddings = <span class="code-keyword">await</span> self.embed(input)
+        context = self.vector_store.query(
+            embeddings, top_k=<span class="code-num">5</span>
+        )
+        response = <span class="code-keyword">await</span> self.model.generate(
+            input, context=context
+        )
+        self.metrics.log(response)
+        <span class="code-keyword">return</span> response</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block reverse">
+                <div class="service-info">
+                    <div class="service-number">02</div>
+                    <h3>Data Services</h3>
+                    <p>
+                        Quality data is the foundation of every successful ML project. We provide end-to-end 
+                        data services—from annotation and labeling to cleaning and validation—ensuring your 
+                        models train on accurate, well-structured datasets.
+                    </p>
+                    <ul class="service-list">
+                        <li>
+                            <strong>Data Labeling & Annotation</strong>
+                            <span>Text, image, video, and audio annotation with domain-expert annotators and multi-stage QA</span>
+                        </li>
+                        <li>
+                            <strong>Data Cleaning & Normalization</strong>
+                            <span>Deduplication, format standardization, and schema alignment across disparate sources</span>
+                        </li>
+                        <li>
+                            <strong>Dataset Design</strong>
+                            <span>Curate training, validation, and test sets with proper class balance and edge case coverage</span>
+                        </li>
+                        <li>
+                            <strong>Quality Control & Validation</strong>
+                            <span>Inter-annotator agreement metrics, automated consistency checks, and iterative refinement</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-outline">Get a Data Audit →</a>
+                </div>
+                <div class="service-visual">
+                    <div class="data-viz">
+                        <div class="data-card">
+                            <div class="data-card-header">
+                                <span class="data-icon">◉</span>
+                                Dataset Health
+                            </div>
+                            <div class="data-metrics">
+                                <div class="data-metric">
+                                    <span class="metric-label">Label Accuracy</span>
+                                    <div class="metric-bar">
+                                        <div class="metric-fill" style="width: 97%"></div>
+                                    </div>
+                                    <span class="metric-value">97.2%</span>
+                                </div>
+                                <div class="data-metric">
+                                    <span class="metric-label">Class Balance</span>
+                                    <div class="metric-bar">
+                                        <div class="metric-fill" style="width: 89%"></div>
+                                    </div>
+                                    <span class="metric-value">89.4%</span>
+                                </div>
+                                <div class="data-metric">
+                                    <span class="metric-label">Edge Coverage</span>
+                                    <div class="metric-bar">
+                                        <div class="metric-fill" style="width: 94%"></div>
+                                    </div>
+                                    <span class="metric-value">94.1%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="data-stats">
+                            <div class="data-stat">
+                                <span class="stat-num">1.2M</span>
+                                <span class="stat-desc">Samples processed</span>
+                            </div>
+                            <div class="data-stat">
+                                <span class="stat-num">99.1%</span>
+                                <span class="stat-desc">QA pass rate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How We Work</span>
+                <h2>A structured process<br>designed for production.</h2>
+                <p class="section-desc">
+                    Every engagement follows a proven methodology that de-risks AI projects 
+                    and ensures alignment between business objectives and technical implementation.
+                </p>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-marker">
+                        <span class="step-number">1</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Discovery</h3>
+                        <p>
+                            We start by understanding your business context, existing infrastructure, 
+                            and success criteria. This phase includes stakeholder interviews, data audits, 
+                            and technical feasibility analysis.
+                        </p>
+                        <ul class="step-deliverables">
+                            <li>Requirements document</li>
+                            <li>Technical feasibility report</li>
+                            <li>Data readiness assessment</li>
+                        </ul>
+                        <span class="step-duration">1-2 weeks</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-marker">
+                        <span class="step-number">2</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Build</h3>
+                        <p>
+                            We develop a working prototype using iterative sprints. This includes 
+                            model selection, training, integration with your systems, and continuous 
+                            validation against your success metrics.
+                        </p>
+                        <ul class="step-deliverables">
+                            <li>Functional prototype</li>
+                            <li>Integration architecture</li>
+                            <li>Performance benchmarks</li>
+                        </ul>
+                        <span class="step-duration">4-8 weeks</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-marker">
+                        <span class="step-number">3</span>
+                        <div class="step-line"></div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Deploy</h3>
+                        <p>
+                            Production deployment with comprehensive testing, monitoring setup, 
+                            and rollback procedures. We work with your ops team to ensure smooth 
+                            handoff and operational readiness.
+                        </p>
+                        <ul class="step-deliverables">
+                            <li>Production deployment</li>
+                            <li>Monitoring dashboards</li>
+                            <li>Runbooks & documentation</li>
+                        </ul>
+                        <span class="step-duration">2-3 weeks</span>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <div class="step-marker">
+                        <span class="step-number">4</span>
+                    </div>
+                    <div class="step-content">
+                        <h3>Iterate</h3>
+                        <p>
+                            Post-launch support and optimization. We analyze production data, 
+                            fine-tune models, and expand capabilities based on real-world usage 
+                            patterns and evolving requirements.
+                        </p>
+                        <ul class="step-deliverables">
+                            <li>Performance reports</li>
+                            <li>Model improvements</li>
+                            <li>Feature expansions</li>
+                        </ul>
+                        <span class="step-duration">Ongoing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="industries" id="industries">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Industries</span>
+                <h2>Sector-specific expertise<br>with cross-industry reach.</h2>
+            </div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M20 7h-9m9 10h-9M4 7h.01M4 12h.01M4 17h.01"/>
+                            <rect x="8" y="4" width="14" height="6" rx="1"/>
+                            <rect x="8" y="14" width="14" height="6" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3>Financial Services</h3>
+                    <p>Document processing, risk assessment, fraud detection, and regulatory compliance automation.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Clinical documentation, medical coding, patient communication, and operational efficiency.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="1" y="3" width="15" height="13" rx="2"/>
+                            <path d="M16 8h5a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-5"/>
+                        </svg>
+                    </div>
+                    <h3>Logistics & Supply Chain</h3>
+                    <p>Demand forecasting, route optimization, inventory management, and exception handling.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M8 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3>Legal & Compliance</h3>
+                    <p>Contract analysis, due diligence automation, regulatory monitoring, and document review.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>SaaS & Technology</h3>
+                    <p>Product copilots, search & discovery, content generation, and intelligent automation.</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Professional Services</h3>
+                    <p>Knowledge management, proposal automation, client intelligence, and research acceleration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Us</span>
+                <h2>Built for production.<br>Measured by results.</h2>
+            </div>
+            <div class="differentiators">
+                <div class="diff-card highlight">
+                    <div class="diff-number">01</div>
+                    <h3>We Ship, Not Just Advise</h3>
+                    <p>
+                        We're practitioners, not consultants who hand off a strategy deck. Our team 
+                        writes production code, deploys infrastructure, and stays engaged through launch 
+                        and beyond. Every project includes working software.
+                    </p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-number">02</div>
+                    <h3>Infrastructure-Aware</h3>
+                    <p>
+                        AI solutions don't exist in a vacuum. We design for your existing stack, security 
+                        requirements, and operational constraints. On-prem GPU clusters, air-gapped networks, 
+                        multi-cloud—we've built for all of them.
+                    </p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-number">03</div>
+                    <h3>Technical Depth</h3>
+                    <p>
+                        Our team includes ML engineers, infrastructure specialists, and domain experts 
+                        who've shipped AI at scale. We don't rely on boilerplate solutions—we architect 
+                        systems specific to your use case.
+                    </p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-number">04</div>
+                    <h3>Honest Assessment</h3>
+                    <p>
+                        Not every problem needs AI. We'll tell you if a rules-based system, third-party 
+                        API, or simpler approach is the right answer. Our goal is your outcome, not 
+                        maximizing project scope.
+                    </p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-number">05</div>
+                    <h3>Knowledge Transfer</h3>
+                    <p>
+                        We work alongside your team, not in a black box. Documentation, training sessions, 
+                        and pair programming ensure your organization can maintain and extend what we build.
+                    </p>
+                </div>
+                <div class="diff-card">
+                    <div class="diff-number">06</div>
+                    <h3>Long-Term Partnership</h3>
+                    <p>
+                        Most clients work with us across multiple projects. We offer ongoing support, 
+                        model monitoring, and optimization to ensure your AI systems continue delivering 
+                        value as your business evolves.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Teaser -->
+    <section class="case-study">
+        <div class="container">
+            <div class="case-content">
+                <span class="case-tag">Case Study</span>
+                <h2>"They reduced our document processing time from 4 hours to 12 minutes."</h2>
+                <p class="case-context">
+                    A mid-market insurance firm needed to automate claims document extraction 
+                    and routing. We built a custom pipeline combining OCR, LLM extraction, and 
+                    business rule validation—deployed on their existing AWS infrastructure.
+                </p>
+                <div class="case-results">
+                    <div class="case-stat">
+                        <span class="case-value">95%</span>
+                        <span class="case-label">Reduction in processing time</span>
+                    </div>
+                    <div class="case-stat">
+                        <span class="case-value">99.2%</span>
+                        <span class="case-label">Extraction accuracy</span>
+                    </div>
+                    <div class="case-stat">
+                        <span class="case-value">$890K</span>
+                        <span class="case-label">Annual savings</span>
+                    </div>
+                </div>
+                <p class="case-attribution">— VP of Operations, Regional Insurance Provider</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to move from POC to production?</h2>
+                <p>
+                    Let's discuss your AI implementation needs. We'll assess feasibility, 
+                    outline a technical approach, and give you an honest evaluation of 
+                    timeline and investment.
+                </p>
+                <div class="cta-form">
+                    <form id="contact-form" action="https://formspree.io/f/xqezrzwg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Work Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <input type="text" id="company" name="company" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">Your Role</label>
+                                <input type="text" id="role" name="role" placeholder="e.g., CTO, VP Engineering">
+                            </div>
+                        </div>
+                        <div class="form-group full">
+                            <label for="project">Tell us about your project</label>
+                            <textarea id="project" name="project" rows="4" placeholder="What are you trying to build? What's your current state?"></textarea>
+                        </div>
+                        <input type="hidden" name="_subject" value="New inquiry from Alternative Hypothesis website">
+                        <input type="hidden" name="_next" value="https://yoursite.com/thank-you">
+                        <button type="submit" class="btn btn-primary btn-large">Schedule Discovery Call</button>
+                    </form>
+                </div>
+                <p class="cta-note">
+                    Or email us directly at <a href="mailto:hello@althypothesis.com">hello@althypothesis.com</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-mark">⬡</span>
+                        <span class="logo-text">Archway</span>
+                    </a>
+                    <p>Production-ready AI implementation for businesses that ship.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">AI Implementation</a></li>
+                            <li><a href="#services">Data Services</a></li>
+                            <li><a href="#process">Our Process</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#why-us">About</a></li>
+                            <li><a href="#industries">Industries</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="mailto:hello@althypothesis.com">hello@althypothesis.com</a></li>
+                            <li><a href="#contact">Start a Project</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Alternative Hypothesis. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
