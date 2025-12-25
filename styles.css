@@ -26,8 +26,8 @@
     --error: #ef4444;
     
     /* Typography - Clean Typewriter */
-    --font-display: 'IBM Plex Mono', 'Consolas', monospace;
-    --font-body: 'IBM Plex Mono', 'Consolas', monospace;
+    --font-display: 'Roboto Mono', monospace;
+    --font-body: 'Roboto Mono', monospace;
     
     /* Spacing */
     --space-xs: 0.25rem;
