@@ -25,9 +25,9 @@
     --success: #22c55e;
     --error: #ef4444;
     
-    /* Typography - Typewriter */
-    --font-display: 'Special Elite', 'Courier Prime', 'Courier New', monospace;
-    --font-body: 'Courier Prime', 'Courier New', monospace;
+    /* Typography - Clean Typewriter */
+    --font-display: 'IBM Plex Mono', 'Consolas', monospace;
+    --font-body: 'IBM Plex Mono', 'Consolas', monospace;
     
     /* Spacing */
     --space-xs: 0.25rem;
