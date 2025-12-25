@@ -431,6 +431,7 @@ ul, ol {
     font-weight: 500;
     color: var(--text-muted);
     letter-spacing: 0.02em;
+    text-transform: none;
 }
 
 /* ==========================================================================
