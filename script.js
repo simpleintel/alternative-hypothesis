@@ -178,6 +178,9 @@ function initFormHandling() {
                 });
                 
                 if (response.ok) {
+                    // Google Ads conversion tracking
+                    gtag('event', 'conversion', {'send_to': 'AW-676753769/c7YdCOO9ndoBEOni2cIC'});
+                    
                     // Success state
                     submitBtn.textContent = 'Message Sent!';
                     submitBtn.style.background = '#22c55e';
