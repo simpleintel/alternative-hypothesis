@@ -1,31 +1,31 @@
 /* ==========================================================================
    Alternative Hypothesis — AI-Operated Business Transformation
-   Dark Executive Theme
+   Light Typewriter Theme
    ========================================================================== */
 
 :root {
-    /* Color System — Dark */
-    --bg-primary: #09090b;
-    --bg-secondary: #111113;
-    --bg-elevated: #1a1a1e;
-    --bg-hover: #222226;
+    /* Color System — Light */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f8f8;
+    --bg-elevated: #f0f0f0;
+    --bg-hover: #e8e8e8;
 
-    --text-primary: #fafafa;
-    --text-secondary: #a1a1aa;
-    --text-muted: #71717a;
-    --text-dim: #52525b;
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6a6a6a;
+    --text-dim: #8a8a8a;
 
-    --border: #27272a;
-    --border-light: #3f3f46;
+    --border: #e0e0e0;
+    --border-light: #d0d0d0;
 
-    --accent: #ffffff;
-    --accent-subtle: rgba(255, 255, 255, 0.06);
+    --accent: #1a1a1a;
+    --accent-subtle: rgba(26, 26, 26, 0.06);
 
     --success: #22c55e;
     --error: #ef4444;
 
-    /* Typography */
-    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    /* Typography — Typewriter */
+    --font: 'Roboto Mono', 'Courier New', monospace;
 
     /* Spacing */
     --space-xs: 0.25rem;
@@ -79,7 +79,7 @@ body {
 }
 
 ::selection {
-    background: rgba(255, 255, 255, 0.2);
+    background: var(--accent);
     color: #ffffff;
 }
 
@@ -164,13 +164,13 @@ img {
 
 .btn-primary {
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #ffffff;
 }
 
 .btn-primary:hover {
-    background: #e4e4e7;
+    background: #333333;
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .btn-ghost {
@@ -200,7 +200,7 @@ img {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(9, 9, 11, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent;
@@ -250,13 +250,13 @@ img {
     font-weight: 600;
     padding: 0.5rem 1.25rem;
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #ffffff;
     border-radius: var(--radius-md);
     transition: all var(--transition-base);
 }
 
 .nav-cta:hover {
-    background: #e4e4e7;
+    background: #333333;
 }
 
 .mobile-menu-btn {
@@ -301,8 +301,8 @@ img {
     height: 600px;
     background: radial-gradient(
         ellipse,
-        rgba(100, 100, 160, 0.07) 0%,
-        rgba(60, 60, 120, 0.03) 40%,
+        rgba(0, 0, 0, 0.03) 0%,
+        rgba(0, 0, 0, 0.01) 40%,
         transparent 70%
     );
     pointer-events: none;
@@ -584,7 +584,7 @@ img {
     height: 48px;
     font-size: 0.875rem;
     font-weight: 700;
-    color: var(--bg-primary);
+    color: #ffffff;
     background: var(--accent);
     border-radius: 50%;
     flex-shrink: 0;

@@ -53,7 +53,7 @@ function initNavigation() {
                         left: 0;
                         right: 0;
                         bottom: 0;
-                        background: rgba(9, 9, 11, 0.98);
+                        background: rgba(255, 255, 255, 0.98);
                         backdrop-filter: blur(16px);
                         -webkit-backdrop-filter: blur(16px);
                         z-index: 999;
@@ -70,21 +70,21 @@ function initNavigation() {
                         gap: 1.5rem;
                     }
                     .mobile-nav a {
-                        font-family: 'Inter', sans-serif;
+                        font-family: 'Roboto Mono', monospace;
                         font-size: 1.25rem;
                         font-weight: 500;
-                        color: #a1a1aa;
+                        color: #4a4a4a;
                         transition: color 0.2s;
                     }
                     .mobile-nav a:hover {
-                        color: #fafafa;
+                        color: #1a1a1a;
                     }
                     .mobile-nav .mobile-cta {
                         display: inline-block;
                         margin-top: 1rem;
                         padding: 0.75rem 1.5rem;
-                        background: #ffffff;
-                        color: #09090b !important;
+                        background: #1a1a1a;
+                        color: #ffffff !important;
                         border-radius: 8px;
                         font-weight: 600;
                     }
