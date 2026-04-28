@@ -259,6 +259,18 @@ img {
     background: #333333;
 }
 
+.nav-phone {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-right: var(--space-md);
+    transition: color var(--transition-fast);
+}
+
+.nav-phone:hover {
+    color: var(--text-primary);
+}
+
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
@@ -362,6 +374,25 @@ img {
     gap: var(--space-md);
 }
 
+.hero-microcopy {
+    margin-top: var(--space-lg);
+    font-size: 0.8125rem;
+    color: var(--text-dim);
+    letter-spacing: 0.02em;
+}
+
+.inline-cta {
+    margin-top: var(--space-2xl);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.inline-cta.center {
+    justify-content: center;
+    margin-top: var(--space-3xl);
+}
+
 /* ==========================================================================
    Manifesto
    ========================================================================== */
@@ -454,6 +485,129 @@ img {
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   Lead Magnet (Transitional CTA)
+   ========================================================================== */
+
+.lead-magnet {
+    padding: var(--space-5xl) 0;
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.lead-magnet-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4xl);
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lead-magnet-content h2 {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: var(--space-lg);
+}
+
+.lead-magnet-desc {
+    font-size: 1.0625rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-xl);
+}
+
+.lead-magnet-desc strong {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.lead-magnet-bullets {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.lead-magnet-bullets li {
+    position: relative;
+    padding-left: var(--space-lg);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+}
+
+.lead-magnet-bullets li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.lead-magnet-form {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-2xl);
+}
+
+.lead-magnet-form .form-group {
+    margin-bottom: var(--space-md);
+}
+
+.lead-magnet-form .form-group input {
+    width: 100%;
+    font-family: var(--font);
+    font-size: 0.9375rem;
+    padding: 0.875rem 1rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast);
+}
+
+.lead-magnet-form .form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.lead-magnet-form .form-group input::placeholder {
+    color: var(--text-dim);
+}
+
+.lead-magnet-form .btn {
+    width: 100%;
+    margin-top: var(--space-sm);
+}
+
+.form-fineprint {
+    margin-top: var(--space-md);
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.form-fineprint a {
+    color: var(--text-primary);
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    transition: border-color var(--transition-fast);
+}
+
+.form-fineprint a:hover {
+    border-color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .lead-magnet-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
 }
 
 /* ==========================================================================
@@ -891,7 +1045,8 @@ img {
 
 @media (max-width: 768px) {
     .nav-links,
-    .nav-cta {
+    .nav-cta,
+    .nav-phone {
         display: none;
     }
 
@@ -950,6 +1105,61 @@ img {
 
     .footer-links {
         grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   Sticky Floating CTA
+   ========================================================================== */
+
+.sticky-cta {
+    position: fixed;
+    bottom: var(--space-xl);
+    right: var(--space-xl);
+    z-index: 999;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.875rem 1.5rem;
+    background: var(--accent);
+    color: #ffffff;
+    font-family: var(--font);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    border-radius: 100px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    transition: all var(--transition-base);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.sticky-cta.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.sticky-cta:hover {
+    background: #333333;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.sticky-cta-arrow {
+    transition: transform var(--transition-base);
+}
+
+.sticky-cta:hover .sticky-cta-arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 480px) {
+    .sticky-cta {
+        bottom: var(--space-md);
+        right: var(--space-md);
+        padding: 0.75rem 1.25rem;
+        font-size: 0.875rem;
     }
 }
 

@@ -6,7 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initSmoothScroll();
     initFormHandling();
+    initScorecardForm();
     initScrollAnimations();
+    initStickyCTA();
 });
 
 // ==========================================================================
@@ -37,10 +39,11 @@ function initNavigation() {
                 mobileNav.innerHTML = `
                     <ul>
                         <li><a href="#the-shift">The Shift</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#process">Process</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact" class="mobile-cta">Book a Call</a></li>
+                        <li><a href="#program">The Program</a></li>
+                        <li><a href="#process">How It Works</a></li>
+                        <li><a href="#about">Why Us</a></li>
+                        <li><a href="tel:4257653765">(425) 765-3765</a></li>
+                        <li><a href="#contact" class="mobile-cta">Book a Discovery Call</a></li>
                     </ul>
                 `;
                 document.body.appendChild(mobileNav);
@@ -203,6 +206,97 @@ function initFormHandling() {
             });
         });
     }
+}
+
+// ==========================================================================
+// Scorecard Form (Transitional CTA)
+// ==========================================================================
+
+function initScorecardForm() {
+    const form = document.getElementById('scorecard-form');
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        try {
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+                gtag('event', 'conversion', {'send_to': 'AW-676753769/c7YdCOO9ndoBEOni2cIC'});
+
+                submitBtn.textContent = 'Check Your Inbox!';
+                submitBtn.style.background = '#22c55e';
+                submitBtn.style.color = '#ffffff';
+
+                form.reset();
+
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.style.color = '';
+                    submitBtn.disabled = false;
+                }, 4000);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            submitBtn.textContent = 'Error — Try Again';
+            submitBtn.style.background = '#ef4444';
+            submitBtn.style.color = '#ffffff';
+            submitBtn.disabled = false;
+
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.style.color = '';
+            }, 3000);
+        }
+    });
+}
+
+// ==========================================================================
+// Sticky Floating CTA
+// ==========================================================================
+
+function initStickyCTA() {
+    const stickyCTA = document.querySelector('.sticky-cta');
+    const hero = document.querySelector('.hero');
+    const contact = document.querySelector('#contact');
+
+    if (!stickyCTA || !hero) return;
+
+    const update = () => {
+        const heroBottom = hero.getBoundingClientRect().bottom;
+        const pastHero = heroBottom < 0;
+
+        let contactVisible = false;
+        if (contact) {
+            const rect = contact.getBoundingClientRect();
+            contactVisible = rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        if (pastHero && !contactVisible) {
+            stickyCTA.classList.add('visible');
+        } else {
+            stickyCTA.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
 }
 
 // ==========================================================================
