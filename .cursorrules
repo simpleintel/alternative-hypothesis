@@ -1,0 +1,10 @@
+# Alternative Hypothesis Website
+
+## Overview
+Static HTML/CSS/JS website with CNAME for custom domain deployment (GitHub Pages).
+
+## Key Files
+- `index.html` — Main page
+- `styles.css` — Styling
+- `script.js` — Interactivity
+- `CNAME` — Custom domain config

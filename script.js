@@ -33,6 +33,32 @@ function initEngineDiagram() {
         }
     }
 
+    // Hero GPU rack: utilization bars + live percentages
+    const rack = document.querySelector('[data-rack]');
+    if (rack) {
+        rack.querySelectorAll('.rack-bars').forEach(barsEl => {
+            for (let i = 0; i < 12; i++) {
+                const bar = document.createElement('i');
+                if (!reduceMotion) {
+                    bar.style.animationDelay = `${(Math.random() * 1.2).toFixed(2)}s`;
+                    bar.style.animationDuration = `${(0.9 + Math.random() * 0.8).toFixed(2)}s`;
+                } else {
+                    bar.style.height = `${40 + Math.floor(Math.random() * 50)}%`;
+                }
+                barsEl.appendChild(bar);
+            }
+        });
+
+        const utils = rack.querySelectorAll('[data-util]');
+        const setUtils = () => {
+            utils.forEach(u => { u.textContent = `${82 + Math.floor(Math.random() * 17)}%`; });
+        };
+        setUtils();
+        if (!reduceMotion) {
+            setInterval(setUtils, 1500);
+        }
+    }
+
     // Embedding vector grid
     const vectorGrid = document.querySelector('[data-vector-grid]');
     if (vectorGrid) {

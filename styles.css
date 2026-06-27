@@ -1401,19 +1401,116 @@ img {
     padding: 1px;
     background: var(--ent-grad);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     opacity: 0.45;
     pointer-events: none;
 }
 
-.enterprise-site .gpu-cluster-img {
-    display: block;
-    width: 100%;
-    height: auto;
+/* Hero dynamic GPU rack */
+.enterprise-site .rack-visual {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
     margin: var(--space-md) 0 var(--space-lg);
-    filter: drop-shadow(0 18px 32px rgba(28, 39, 84, 0.14));
+    padding: var(--space-md);
+    border-radius: 16px;
+    background: linear-gradient(180deg, #0b1120 0%, #131c33 100%);
 }
+
+.enterprise-site .rack-node {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "led title util" "bars bars bars";
+    align-items: center;
+    gap: 0.4rem 0.5rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(120, 150, 255, 0.22);
+}
+
+.enterprise-site .rack-led {
+    grid-area: led;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #2fceff;
+    box-shadow: 0 0 8px #2fceff;
+    animation: ledBlink 1.4s ease-in-out infinite;
+}
+
+.enterprise-site .rack-node:nth-child(2) .rack-led { animation-delay: 0.3s; }
+.enterprise-site .rack-node:nth-child(3) .rack-led { animation-delay: 0.6s; }
+.enterprise-site .rack-node:nth-child(4) .rack-led { animation-delay: 0.9s; }
+
+@keyframes ledBlink {
+    0%, 100% { opacity: 0.35; }
+    50%      { opacity: 1; }
+}
+
+.enterprise-site .rack-title {
+    grid-area: title;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #cdd9f7;
+    letter-spacing: 0.02em;
+}
+
+.enterprise-site .rack-util {
+    grid-area: util;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: #6ad0ff;
+    font-variant-numeric: tabular-nums;
+}
+
+.enterprise-site .rack-bars {
+    grid-area: bars;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 26px;
+}
+
+.enterprise-site .rack-bars i {
+    flex: 1;
+    border-radius: 1px;
+    background: linear-gradient(180deg, #4f46e5, #06b6d4);
+    height: 20%;
+    animation: barPulse 1.2s ease-in-out infinite;
+}
+
+@keyframes barPulse {
+    0%, 100% { height: 20%; opacity: 0.55; }
+    50%      { height: 95%; opacity: 1; }
+}
+
+.enterprise-site .rack-bus {
+    grid-column: 1 / -1;
+    position: relative;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, rgba(79, 70, 229, 0.25), rgba(6, 182, 212, 0.5));
+    margin-top: 0.2rem;
+}
+
+.enterprise-site .rack-packet {
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #2fceff;
+    box-shadow: 0 0 8px #2fceff;
+    transform: translateY(-50%);
+    animation: packetFlow 2.2s linear infinite;
+}
+
+.enterprise-site .rack-packet:nth-child(2) { animation-delay: 1.1s; }
 
 .enterprise-site .shell-label {
     display: inline-block;
@@ -1472,12 +1569,141 @@ img {
     text-align: center;
 }
 
-.enterprise-site .gpu-card-img {
-    display: block;
+/* Solution dynamic GPU card */
+.enterprise-site .gpu-card-anim {
+    position: relative;
     width: 100%;
-    height: auto;
-    border-radius: 18px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     filter: drop-shadow(0 22px 44px rgba(28, 39, 84, 0.18));
+}
+
+.enterprise-site .gpu-card-body {
+    position: relative;
+    width: 92%;
+    height: 70%;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #1a2336 0%, #0b1120 100%);
+    border: 1px solid rgba(120, 150, 255, 0.3);
+    overflow: hidden;
+}
+
+.enterprise-site .gpu-card-body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    padding: 1.5px;
+    background: var(--ent-grad);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.7;
+    pointer-events: none;
+    animation: cardGlow 3s ease-in-out infinite;
+}
+
+@keyframes cardGlow {
+    0%, 100% { opacity: 0.35; }
+    50%      { opacity: 0.9; }
+}
+
+.enterprise-site .gpu-card-shroud {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8%;
+}
+
+.enterprise-site .gpu-fan {
+    position: relative;
+    width: 34%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(circle, #0e1626 38%, #1c2742 40%, #0e1626 70%);
+    border: 2px solid rgba(120, 150, 255, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enterprise-site .gpu-fan-blades {
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    background:
+        conic-gradient(from 0deg,
+            rgba(106, 168, 255, 0.05) 0deg, rgba(106, 168, 255, 0.5) 30deg, rgba(106, 168, 255, 0.05) 60deg,
+            rgba(106, 168, 255, 0.05) 90deg, rgba(106, 168, 255, 0.5) 120deg, rgba(106, 168, 255, 0.05) 150deg,
+            rgba(106, 168, 255, 0.05) 180deg, rgba(106, 168, 255, 0.5) 210deg, rgba(106, 168, 255, 0.05) 240deg,
+            rgba(106, 168, 255, 0.05) 270deg, rgba(106, 168, 255, 0.5) 300deg, rgba(106, 168, 255, 0.05) 330deg);
+    animation: fanSpin 1.1s linear infinite;
+}
+
+.enterprise-site .gpu-fan:last-child .gpu-fan-blades {
+    animation-duration: 0.9s;
+}
+
+.enterprise-site .gpu-fan::after {
+    content: "";
+    position: absolute;
+    width: 22%;
+    height: 22%;
+    border-radius: 50%;
+    background: #6aa8ff;
+    box-shadow: 0 0 8px rgba(106, 168, 255, 0.7);
+    z-index: 1;
+}
+
+@keyframes fanSpin {
+    to { transform: rotate(360deg); }
+}
+
+.enterprise-site .gpu-trace {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.55;
+}
+
+.enterprise-site .gpu-trace path {
+    fill: none;
+    stroke: #2fceff;
+    stroke-width: 1.2;
+    stroke-dasharray: 6 8;
+    animation: traceFlow 1.4s linear infinite;
+}
+
+.enterprise-site .gpu-trace path:nth-child(2) { animation-duration: 2s; stroke: #6a7bff; }
+.enterprise-site .gpu-trace path:nth-child(3) { animation-duration: 1.7s; }
+
+@keyframes traceFlow {
+    to { stroke-dashoffset: -28; }
+}
+
+.enterprise-site .gpu-card-bracket {
+    position: absolute;
+    left: -3%;
+    top: 18%;
+    width: 6%;
+    height: 64%;
+    border-radius: 3px;
+    background: linear-gradient(180deg, #b9c4dd, #7c89a8);
+}
+
+.enterprise-site .gpu-card-glow {
+    position: absolute;
+    inset: 8% 4%;
+    border-radius: 18px;
+    background: radial-gradient(circle at 50% 50%, rgba(79, 70, 229, 0.22), transparent 70%);
+    z-index: -1;
+    animation: cardGlow 3s ease-in-out infinite;
 }
 
 .enterprise-site .gpu-card-figure figcaption {
@@ -2063,7 +2289,14 @@ img {
     .enterprise-site .gpu-core,
     .enterprise-site .attention-svg line,
     .enterprise-site .tf-flow,
-    .enterprise-site .output-stream .caret {
+    .enterprise-site .output-stream .caret,
+    .enterprise-site .rack-led,
+    .enterprise-site .rack-bars i,
+    .enterprise-site .rack-packet,
+    .enterprise-site .gpu-fan-blades,
+    .enterprise-site .gpu-trace path,
+    .enterprise-site .gpu-card-body::after,
+    .enterprise-site .gpu-card-glow {
         animation: none;
     }
 
@@ -2071,4 +2304,6 @@ img {
     .enterprise-site .vector-cell { opacity: 0.6; }
     .enterprise-site .gpu-core { opacity: 0.5; }
     .enterprise-site .attention-svg line { stroke-dashoffset: 0; }
+    .enterprise-site .rack-led { opacity: 0.8; }
+    .enterprise-site .gpu-trace path { stroke-dasharray: none; }
 }

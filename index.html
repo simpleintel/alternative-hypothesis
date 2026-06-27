@@ -62,10 +62,33 @@
                 <div class="hero-visual">
                     <figure class="gpu-frame">
                         <span class="shell-label">Secure Enterprise Boundary</span>
-                        <picture>
-                            <source srcset="assets/gpu-cluster.webp" type="image/webp">
-                            <img src="assets/gpu-cluster.png" alt="Private GPU server cluster running open-source AI models inside a secure enterprise environment" class="gpu-cluster-img" width="1080" height="720" loading="eager">
-                        </picture>
+                        <div class="rack-visual" data-rack aria-hidden="true">
+                            <div class="rack-node">
+                                <span class="rack-led"></span>
+                                <span class="rack-title">GPU Node 01</span>
+                                <div class="rack-bars"></div>
+                                <span class="rack-util" data-util>0%</span>
+                            </div>
+                            <div class="rack-node">
+                                <span class="rack-led"></span>
+                                <span class="rack-title">GPU Node 02</span>
+                                <div class="rack-bars"></div>
+                                <span class="rack-util" data-util>0%</span>
+                            </div>
+                            <div class="rack-node">
+                                <span class="rack-led"></span>
+                                <span class="rack-title">GPU Node 03</span>
+                                <div class="rack-bars"></div>
+                                <span class="rack-util" data-util>0%</span>
+                            </div>
+                            <div class="rack-node">
+                                <span class="rack-led"></span>
+                                <span class="rack-title">GPU Node 04</span>
+                                <div class="rack-bars"></div>
+                                <span class="rack-util" data-util>0%</span>
+                            </div>
+                            <div class="rack-bus"><span class="rack-packet"></span><span class="rack-packet"></span></div>
+                        </div>
                         <div class="architecture-pipeline">
                             <span>Open-Source Models</span>
                             <span>Private GPU Infrastructure</span>
@@ -76,87 +99,6 @@
             </div>
         </div>
     </header>
-
-    <!-- Problem -->
-    <section class="problem" id="platform">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">The Problem</span>
-                <h2>Third-Party AI APIs Create Enterprise Risk</h2>
-                <p class="section-desc">External AI APIs can introduce privacy concerns, compliance challenges, vendor lock-in, latency, downtime risk, and unpredictable costs. For enterprises handling sensitive data, AI must be secure, controlled, and self-contained.</p>
-            </div>
-            <div class="problem-grid">
-                <div class="problem-card">
-                    <span class="problem-icon">01</span>
-                    <h3>Data Privacy Risk</h3>
-                    <p>Sensitive prompts and records leave your controlled environment.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">02</span>
-                    <h3>Vendor Lock-In</h3>
-                    <p>Roadmap and model availability are controlled by external providers.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">03</span>
-                    <h3>Unpredictable Costs</h3>
-                    <p>Usage-based pricing scales with traffic, not your budget strategy.</p>
-                </div>
-                <div class="problem-card">
-                    <span class="problem-icon">04</span>
-                    <h3>Compliance Complexity</h3>
-                    <p>Proving data residency, auditability, and controls gets harder with external calls.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Solution -->
-    <section class="manifesto">
-        <div class="container">
-            <div class="solution-intro">
-                <div class="manifesto-content">
-                    <span class="section-label">The Guide</span>
-                    <h2>Open-Source Models. Enterprise Deployment. Full Control.</h2>
-                    <div class="manifesto-text">
-                        <p>
-                            Alternative Hypothesis is your trusted deployment partner for private, production-grade AI.
-                            We help your organization deploy and operate open-source AI models on your own GPU infrastructure,
-                            giving your teams the power of AI without sending data to third-party APIs.
-                        </p>
-                    </div>
-                </div>
-                <figure class="gpu-card-figure">
-                    <picture>
-                        <source srcset="assets/gpu-card.webp" type="image/webp">
-                        <img src="assets/gpu-card.png" alt="Enterprise AI GPU accelerator card powering on-premise open-source model inference" class="gpu-card-img" width="1080" height="720" loading="lazy">
-                    </picture>
-                    <figcaption>Enterprise-grade GPUs, deployed where your data lives.</figcaption>
-                </figure>
-            </div>
-            <div class="services-grid benefits-grid">
-                <div class="service-card">
-                    <div class="service-number">01</div>
-                    <h3>No Third-Party API Dependency</h3>
-                    <p>Inference runs in your environment, not over public API endpoints.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">02</div>
-                    <h3>Fully Self-Contained Deployment</h3>
-                    <p>Data, prompts, embeddings, and outputs remain inside your control perimeter.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">03</div>
-                    <h3>On-Premise or Private Cloud Ready</h3>
-                    <p>Deploy where your enterprise already runs mission-critical systems.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-number">04</div>
-                    <h3>Built for Security, Compliance, and Scale</h3>
-                    <p>Enterprise architecture, policy controls, and operational reliability from day one.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Engine — Animated LLM + GPU schematic -->
     <section class="engine" id="engine">
@@ -230,6 +172,98 @@
             </div>
 
             <p class="engine-foot">Prompts, embeddings, weights, and outputs never leave your secure boundary.</p>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem" id="platform">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">The Problem</span>
+                <h2>Third-Party AI APIs Create Enterprise Risk</h2>
+                <p class="section-desc">External AI APIs can introduce privacy concerns, compliance challenges, vendor lock-in, latency, downtime risk, and unpredictable costs. For enterprises handling sensitive data, AI must be secure, controlled, and self-contained.</p>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">01</span>
+                    <h3>Data Privacy Risk</h3>
+                    <p>Sensitive prompts and records leave your controlled environment.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">02</span>
+                    <h3>Vendor Lock-In</h3>
+                    <p>Roadmap and model availability are controlled by external providers.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">03</span>
+                    <h3>Unpredictable Costs</h3>
+                    <p>Usage-based pricing scales with traffic, not your budget strategy.</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">04</span>
+                    <h3>Compliance Complexity</h3>
+                    <p>Proving data residency, auditability, and controls gets harder with external calls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="manifesto">
+        <div class="container">
+            <div class="solution-intro">
+                <div class="manifesto-content">
+                    <span class="section-label">The Guide</span>
+                    <h2>Open-Source Models. Enterprise Deployment. Full Control.</h2>
+                    <div class="manifesto-text">
+                        <p>
+                            Alternative Hypothesis is your trusted deployment partner for private, production-grade AI.
+                            We help your organization deploy and operate open-source AI models on your own GPU infrastructure,
+                            giving your teams the power of AI without sending data to third-party APIs.
+                        </p>
+                    </div>
+                </div>
+                <figure class="gpu-card-figure">
+                    <div class="gpu-card-anim" aria-hidden="true">
+                        <div class="gpu-card-body">
+                            <div class="gpu-card-shroud">
+                                <div class="gpu-fan"><span class="gpu-fan-blades"></span></div>
+                                <div class="gpu-fan"><span class="gpu-fan-blades"></span></div>
+                                <svg class="gpu-trace" viewBox="0 0 200 90" preserveAspectRatio="none">
+                                    <path d="M10 70 H60 V30 H120 V60 H190" />
+                                    <path d="M10 45 H40 V15 H100" />
+                                    <path d="M190 25 H140 V55 H80" />
+                                </svg>
+                            </div>
+                            <div class="gpu-card-bracket"></div>
+                        </div>
+                        <span class="gpu-card-glow"></span>
+                    </div>
+                    <figcaption>Enterprise-grade GPUs, deployed where your data lives.</figcaption>
+                </figure>
+            </div>
+            <div class="services-grid benefits-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <h3>No Third-Party API Dependency</h3>
+                    <p>Inference runs in your environment, not over public API endpoints.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <h3>Fully Self-Contained Deployment</h3>
+                    <p>Data, prompts, embeddings, and outputs remain inside your control perimeter.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <h3>On-Premise or Private Cloud Ready</h3>
+                    <p>Deploy where your enterprise already runs mission-critical systems.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <h3>Built for Security, Compliance, and Scale</h3>
+                    <p>Enterprise architecture, policy controls, and operational reliability from day one.</p>
+                </div>
+            </div>
         </div>
     </section>
 
