@@ -38,12 +38,12 @@ function initNavigation() {
                 mobileNav.className = 'mobile-nav';
                 mobileNav.innerHTML = `
                     <ul>
-                        <li><a href="#the-shift">The Shift</a></li>
-                        <li><a href="#service">The Service</a></li>
-                        <li><a href="#process">How It Works</a></li>
-                        <li><a href="#about">Why Us</a></li>
+                        <li><a href="#platform">Platform</a></li>
+                        <li><a href="#use-cases">Use Cases</a></li>
+                        <li><a href="#security">Security</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="tel:4257653765">(425) 765-3765</a></li>
-                        <li><a href="#contact" class="mobile-cta">Book a Discovery Call</a></li>
+                        <li><a href="#contact" class="mobile-cta">Schedule a Deployment Call</a></li>
                     </ul>
                 `;
                 document.body.appendChild(mobileNav);
