@@ -39,7 +39,7 @@ function initNavigation() {
                 mobileNav.innerHTML = `
                     <ul>
                         <li><a href="#the-shift">The Shift</a></li>
-                        <li><a href="#program">The Program</a></li>
+                        <li><a href="#service">The Service</a></li>
                         <li><a href="#process">How It Works</a></li>
                         <li><a href="#about">Why Us</a></li>
                         <li><a href="tel:4257653765">(425) 765-3765</a></li>
