@@ -9,7 +9,87 @@ document.addEventListener('DOMContentLoaded', () => {
     initScorecardForm();
     initScrollAnimations();
     initStickyCTA();
+    initEngineDiagram();
 });
+
+// ==========================================================================
+// Engine Diagram (Animated LLM + GPU schematic)
+// ==========================================================================
+
+function initEngineDiagram() {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // GPU core grid
+    const gpuGrid = document.querySelector('[data-gpu-grid]');
+    if (gpuGrid) {
+        const cores = 60;
+        for (let i = 0; i < cores; i++) {
+            const core = document.createElement('span');
+            core.className = 'gpu-core';
+            if (!reduceMotion) {
+                core.style.animationDelay = `${(Math.random() * 1.6).toFixed(2)}s`;
+            }
+            gpuGrid.appendChild(core);
+        }
+    }
+
+    // Embedding vector grid
+    const vectorGrid = document.querySelector('[data-vector-grid]');
+    if (vectorGrid) {
+        const cells = 24;
+        for (let i = 0; i < cells; i++) {
+            const cell = document.createElement('span');
+            cell.className = 'vector-cell';
+            if (!reduceMotion) {
+                cell.style.animationDelay = `${(Math.random() * 2.4).toFixed(2)}s`;
+            }
+            vectorGrid.appendChild(cell);
+        }
+    }
+
+    // Streaming output text (typewriter loop)
+    const out = document.querySelector('[data-output-text]');
+    if (out) {
+        const phrases = [
+            'The Q3 contract renews on Oct 1 with a 4% uplift…',
+            'Key risk: the indemnity clause in section 7.2…',
+            'Net terms shift from 30 to 45 days next quarter…'
+        ];
+
+        if (reduceMotion) {
+            out.textContent = phrases[0];
+            return;
+        }
+
+        let pIndex = 0;
+        let cIndex = 0;
+        let deleting = false;
+
+        const tick = () => {
+            const current = phrases[pIndex];
+            if (!deleting) {
+                cIndex++;
+                out.textContent = current.slice(0, cIndex);
+                if (cIndex === current.length) {
+                    deleting = true;
+                    return setTimeout(tick, 1600);
+                }
+                return setTimeout(tick, 38);
+            } else {
+                cIndex--;
+                out.textContent = current.slice(0, cIndex);
+                if (cIndex === 0) {
+                    deleting = false;
+                    pIndex = (pIndex + 1) % phrases.length;
+                    return setTimeout(tick, 320);
+                }
+                return setTimeout(tick, 18);
+            }
+        };
+
+        tick();
+    }
+}
 
 // ==========================================================================
 // Navigation

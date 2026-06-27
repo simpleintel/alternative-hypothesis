@@ -1742,3 +1742,333 @@ img {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================================================
+   Engine — Animated LLM + GPU Schematic
+   ========================================================================== */
+
+.enterprise-site .engine {
+    padding: var(--space-6xl) 0;
+    background: var(--ent-bg-soft);
+    border-top: 1px solid var(--ent-line);
+}
+
+.enterprise-site .engine-diagram {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--space-xl);
+    border: 1px solid var(--ent-line);
+    border-radius: 20px;
+    background:
+        radial-gradient(circle at 50% -10%, rgba(79, 70, 229, 0.07) 0%, transparent 55%),
+        #ffffff;
+    box-shadow: 0 24px 60px rgba(28, 39, 84, 0.1);
+    overflow: hidden;
+}
+
+.enterprise-site .engine-stage {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-md);
+}
+
+.enterprise-site .stage-tag {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ent-brand);
+}
+
+.enterprise-site .stage-body {
+    width: 100%;
+    min-height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    border-radius: 14px;
+    border: 1px solid var(--ent-line);
+    background: var(--ent-bg-soft);
+}
+
+.enterprise-site .stage-name {
+    font-size: 0.78rem;
+    color: var(--ent-ink-mute);
+    line-height: 1.35;
+}
+
+/* Connectors with flowing packet */
+.enterprise-site .engine-connector {
+    flex: 0 0 44px;
+    align-self: center;
+    position: relative;
+    height: 2px;
+    margin-top: -28px;
+    background: linear-gradient(90deg, rgba(79, 70, 229, 0.15), rgba(6, 182, 212, 0.35));
+    border-radius: 2px;
+}
+
+.enterprise-site .engine-connector .packet {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--ent-grad);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.6);
+    transform: translate(-50%, -50%);
+    animation: packetFlow 1.8s linear infinite;
+}
+
+@keyframes packetFlow {
+    0%   { left: 0%;   opacity: 0; }
+    15%  { opacity: 1; }
+    85%  { opacity: 1; }
+    100% { left: 100%; opacity: 0; }
+}
+
+/* Stage 1 — token chips */
+.enterprise-site .token-stream {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    justify-content: center;
+}
+
+.enterprise-site .token-stream .token {
+    padding: 0.3rem 0.55rem;
+    border-radius: 7px;
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: var(--ent-ink);
+    background: #ffffff;
+    border: 1px solid var(--ent-line-strong);
+    opacity: 0;
+    animation: tokenRise 3.6s ease-in-out infinite;
+}
+
+.enterprise-site .token-stream .token:nth-child(1) { animation-delay: 0s; }
+.enterprise-site .token-stream .token:nth-child(2) { animation-delay: 0.2s; }
+.enterprise-site .token-stream .token:nth-child(3) { animation-delay: 0.4s; }
+.enterprise-site .token-stream .token:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes tokenRise {
+    0%   { opacity: 0; transform: translateY(8px); }
+    20%  { opacity: 1; transform: translateY(0); }
+    80%  { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0.25; transform: translateY(-4px); }
+}
+
+/* Stage 2 — embedding vector grid */
+.enterprise-site .vector-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 4px;
+    width: 100%;
+    max-width: 150px;
+}
+
+.enterprise-site .vector-cell {
+    aspect-ratio: 1;
+    border-radius: 3px;
+    background: var(--ent-grad);
+    opacity: 0.2;
+    animation: vecShimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes vecShimmer {
+    0%, 100% { opacity: 0.15; }
+    50%      { opacity: 0.95; }
+}
+
+/* Stage 3 — GPU block + transformer */
+.enterprise-site .engine-stage-gpu {
+    flex: 1.4 1 0;
+}
+
+.enterprise-site .engine-stage-gpu .stage-body {
+    background: linear-gradient(180deg, #0b1120 0%, #131c33 100%);
+    border-color: rgba(79, 70, 229, 0.4);
+    min-height: 132px;
+}
+
+.enterprise-site .gpu-block {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 104px;
+}
+
+.enterprise-site .gpu-core-grid {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 3px;
+    opacity: 0.6;
+}
+
+.enterprise-site .gpu-core {
+    border-radius: 2px;
+    background: #2fceff;
+    opacity: 0.12;
+    animation: corePulse 1.6s ease-in-out infinite;
+}
+
+@keyframes corePulse {
+    0%, 100% { opacity: 0.1; }
+    50%      { opacity: 0.85; }
+}
+
+.enterprise-site .transformer-stack {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    justify-content: center;
+    padding: 0.4rem;
+}
+
+.enterprise-site .tf-layer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.5rem;
+    border-radius: 8px;
+    background: rgba(13, 21, 40, 0.72);
+    border: 1px solid rgba(120, 150, 255, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+.enterprise-site .tf-name {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #d8e3ff;
+    letter-spacing: 0.02em;
+    z-index: 1;
+}
+
+.enterprise-site .attention-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+}
+
+.enterprise-site .attention-svg line {
+    stroke: url(#attnGrad);
+    stroke: #6aa8ff;
+    stroke-width: 1;
+    stroke-dasharray: 60;
+    stroke-dashoffset: 60;
+    animation: attnDash 2s linear infinite;
+}
+
+@keyframes attnDash {
+    to { stroke-dashoffset: 0; }
+}
+
+.enterprise-site .tf-flow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background: linear-gradient(90deg, transparent, rgba(47, 206, 255, 0.35), transparent);
+    animation: tfFlow 2s linear infinite;
+}
+
+@keyframes tfFlow {
+    0%   { transform: translateX(-120%); }
+    100% { transform: translateX(360%); }
+}
+
+/* Stage 4 — output stream */
+.enterprise-site .output-stream {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    color: var(--ent-ink);
+    text-align: left;
+    font-weight: 500;
+}
+
+.enterprise-site .output-stream .caret {
+    display: inline-block;
+    width: 7px;
+    height: 1.05em;
+    margin-left: 1px;
+    vertical-align: text-bottom;
+    background: var(--ent-brand);
+    animation: caretBlink 1s steps(2) infinite;
+}
+
+@keyframes caretBlink {
+    0%, 50%  { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+.enterprise-site .engine-foot {
+    margin-top: var(--space-xl);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--ent-ink-soft);
+}
+
+@media (max-width: 880px) {
+    .enterprise-site .engine-diagram {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .enterprise-site .engine-connector {
+        flex: 0 0 36px;
+        width: 2px;
+        height: 36px;
+        margin: 0;
+        background: linear-gradient(180deg, rgba(79, 70, 229, 0.15), rgba(6, 182, 212, 0.35));
+    }
+
+    .enterprise-site .engine-connector .packet {
+        top: 0;
+        left: 50%;
+        animation: packetFlowV 1.8s linear infinite;
+    }
+
+    @keyframes packetFlowV {
+        0%   { top: 0%;   opacity: 0; }
+        15%  { opacity: 1; }
+        85%  { opacity: 1; }
+        100% { top: 100%; opacity: 0; }
+    }
+
+    .enterprise-site .vector-grid { max-width: 180px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .enterprise-site .engine-connector .packet,
+    .enterprise-site .token-stream .token,
+    .enterprise-site .vector-cell,
+    .enterprise-site .gpu-core,
+    .enterprise-site .attention-svg line,
+    .enterprise-site .tf-flow,
+    .enterprise-site .output-stream .caret {
+        animation: none;
+    }
+
+    .enterprise-site .token-stream .token { opacity: 1; }
+    .enterprise-site .vector-cell { opacity: 0.6; }
+    .enterprise-site .gpu-core { opacity: 0.5; }
+    .enterprise-site .attention-svg line { stroke-dashoffset: 0; }
+}

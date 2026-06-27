@@ -158,6 +158,81 @@
         </div>
     </section>
 
+    <!-- Engine — Animated LLM + GPU schematic -->
+    <section class="engine" id="engine">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Under the Hood</span>
+                <h2>Inside Your Private AI Engine</h2>
+                <p class="section-desc">Every token is processed on your own GPUs — from prompt to response, the entire model runs inside your environment with no external API calls.</p>
+            </div>
+
+            <div class="engine-diagram" aria-hidden="true">
+                <!-- Stage 1: Prompt -->
+                <div class="engine-stage">
+                    <span class="stage-tag">01 · Prompt</span>
+                    <div class="stage-body">
+                        <div class="token-stream" data-token-stream>
+                            <span class="token">Summarize</span>
+                            <span class="token">our</span>
+                            <span class="token">Q3</span>
+                            <span class="token">contract</span>
+                        </div>
+                    </div>
+                    <span class="stage-name">Your input, tokenized</span>
+                </div>
+
+                <div class="engine-connector"><span class="packet"></span></div>
+
+                <!-- Stage 2: Embeddings -->
+                <div class="engine-stage">
+                    <span class="stage-tag">02 · Embeddings</span>
+                    <div class="stage-body">
+                        <div class="vector-grid" data-vector-grid></div>
+                    </div>
+                    <span class="stage-name">Tokens → vectors</span>
+                </div>
+
+                <div class="engine-connector"><span class="packet"></span></div>
+
+                <!-- Stage 3: Transformer layers on GPU -->
+                <div class="engine-stage engine-stage-gpu">
+                    <span class="stage-tag">03 · Transformer × N on GPU</span>
+                    <div class="stage-body">
+                        <div class="gpu-block">
+                            <div class="gpu-core-grid" data-gpu-grid></div>
+                            <div class="transformer-stack">
+                                <div class="tf-layer">
+                                    <span class="tf-name">Self-Attention</span>
+                                    <svg class="attention-svg" viewBox="0 0 120 44" preserveAspectRatio="none">
+                                        <line x1="10" y1="8" x2="60" y2="36" /><line x1="40" y1="8" x2="60" y2="36" />
+                                        <line x1="70" y1="8" x2="60" y2="36" /><line x1="110" y1="8" x2="60" y2="36" />
+                                        <line x1="60" y1="36" x2="20" y2="8" /><line x1="60" y1="36" x2="100" y2="8" />
+                                    </svg>
+                                </div>
+                                <div class="tf-layer"><span class="tf-name">Feed-Forward</span><span class="tf-flow"></span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="stage-name">Parallel matrix math across GPU cores</span>
+                </div>
+
+                <div class="engine-connector"><span class="packet"></span></div>
+
+                <!-- Stage 4: Output -->
+                <div class="engine-stage">
+                    <span class="stage-tag">04 · Response</span>
+                    <div class="stage-body">
+                        <div class="output-stream"><span data-output-text></span><span class="caret"></span></div>
+                    </div>
+                    <span class="stage-name">Streamed back, in-house</span>
+                </div>
+            </div>
+
+            <p class="engine-foot">Prompts, embeddings, weights, and outputs never leave your secure boundary.</p>
+        </div>
+    </section>
+
     <!-- How It Works -->
     <section class="process" id="how-it-works">
         <div class="container">
