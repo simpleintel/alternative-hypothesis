@@ -430,6 +430,7 @@ function initScrollAnimations() {
         '.process-step',
         '.outcome-item',
         '.different-card',
+        '.journey-stage',
         '.cta-content'
     ];
 
