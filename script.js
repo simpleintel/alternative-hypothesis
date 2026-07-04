@@ -431,6 +431,7 @@ function initScrollAnimations() {
         '.outcome-item',
         '.different-card',
         '.journey-stage',
+        '.industry-card',
         '.cta-content'
     ];
 
