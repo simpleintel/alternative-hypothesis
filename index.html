@@ -56,42 +56,59 @@
 
                 <div class="sketch-scene" aria-hidden="true">
                     <svg viewBox="0 0 640 260" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Sticky note with hand-drawn sketch -->
+                        <defs>
+                            <linearGradient id="skGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stop-color="#d946ef"/>
+                                <stop offset="100%" stop-color="#f97316"/>
+                            </linearGradient>
+                            <linearGradient id="skDark" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stop-color="#331227"/>
+                                <stop offset="100%" stop-color="#1d0b18"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- Napkin with hand-drawn schema -->
                         <g class="sk-note">
-                            <rect x="40" y="38" width="190" height="190" rx="6" class="sk-note-paper" transform="rotate(-4 135 133)"/>
-                            <path d="M206 210l22-14-8 26z" class="sk-note-fold" transform="rotate(-4 135 133)"/>
-                            <g transform="rotate(-4 135 133)">
-                                <path class="sk-doodle d1" d="M62 70c40-5 100-4 146 2"/>
-                                <path class="sk-doodle d2" d="M64 96c2 26-2 60 2 92 42 4 96 6 140 0 3-32 1-64-2-90-46-6-96-6-140-2z"/>
-                                <path class="sk-doodle d3" d="M78 120c22-3 46-2 66 1"/>
-                                <path class="sk-doodle d4" d="M78 142c30-3 68-2 98 1"/>
-                                <circle class="sk-doodle d5" cx="98" cy="172" r="12"/>
-                                <path class="sk-doodle d6" d="M124 168c26-3 52-2 74 2"/>
+                            <g transform="rotate(-3 136 134)">
+                                <rect x="36" y="34" width="200" height="200" rx="10" class="sk-note-paper"/>
+                                <rect x="45" y="43" width="182" height="182" rx="7" class="sk-note-stitch"/>
+                                <!-- idea box -->
+                                <path class="sk-doodle d1" d="M96 60c22-4 58-3 80 1 3 9 3 19 0 27-26 4-54 4-80 0-3-9-3-19 0-28z"/>
+                                <!-- arrow down -->
+                                <path class="sk-doodle d2" d="M136 92c2 8 1 15 0 24M129 106l7 12 7-12"/>
+                                <!-- decision diamond -->
+                                <path class="sk-doodle d3" d="M136 120c12 8 23 17 33 27-11 9-22 18-33 26-11-9-22-18-33-26 10-10 21-19 33-27z"/>
+                                <!-- branch left -->
+                                <path class="sk-doodle d4" d="M110 158c-13 8-21 15-26 25M80 172l3 13 12-6"/>
+                                <!-- left result box -->
+                                <path class="sk-doodle d5" d="M52 190c16-3 40-3 56 1 2 7 2 14 0 21-19 3-38 3-56 0-2-7-2-15 0-22z"/>
+                                <!-- branch right + right result box -->
+                                <path class="sk-doodle d6" d="M162 158c13 8 21 15 26 25M192 172l-3 13-12-6M152 190c16-3 40-3 56 1 2 7 2 14 0 21-19 3-38 3-56 0-2-7-2-15 0-22z"/>
                             </g>
                         </g>
 
                         <!-- Magic arrow -->
                         <g class="sk-arrow">
-                            <path class="sk-arrow-line" d="M258 132c30-26 64-26 96 0"/>
+                            <path class="sk-arrow-line" stroke="url(#skGrad)" d="M258 132c30-26 64-26 96 0"/>
                             <path class="sk-arrow-head" d="M348 122l12 10-15 5z"/>
                             <path class="sk-spark s1" d="M300 92l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
                             <path class="sk-spark s2" d="M320 158l2.4 6 6 2.4-6 2.4-2.4 6-2.4-6-6-2.4 6-2.4z"/>
                         </g>
 
-                        <!-- App window -->
+                        <!-- Product: the same schema, live -->
                         <g class="sk-app">
-                            <rect x="392" y="34" width="210" height="196" rx="14" class="sk-app-frame"/>
-                            <path d="M392 70h210" class="sk-app-divider"/>
-                            <circle cx="412" cy="52" r="4.5" class="sk-dot dot1"/>
-                            <circle cx="428" cy="52" r="4.5" class="sk-dot dot2"/>
-                            <circle cx="444" cy="52" r="4.5" class="sk-dot dot3"/>
-                            <rect class="sk-ui u1" x="410" y="88" width="120" height="12" rx="6"/>
-                            <rect class="sk-ui u2" x="410" y="112" width="174" height="9" rx="4.5"/>
-                            <rect class="sk-ui u3" x="410" y="130" width="150" height="9" rx="4.5"/>
-                            <circle class="sk-ui u4" cx="432" cy="178" r="20"/>
-                            <rect class="sk-ui u5" x="464" y="162" width="120" height="10" rx="5"/>
-                            <rect class="sk-ui u6" x="464" y="182" width="90" height="10" rx="5"/>
-                            <rect class="sk-ui u7" x="410" y="206" width="86" height="16" rx="8"/>
+                            <rect x="392" y="30" width="212" height="204" rx="16" class="sk-app-frame"/>
+                            <path d="M392 66h212" class="sk-app-divider"/>
+                            <circle cx="412" cy="48" r="4.5" class="sk-dot dot1"/>
+                            <circle cx="428" cy="48" r="4.5" class="sk-dot dot2"/>
+                            <circle cx="444" cy="48" r="4.5" class="sk-dot dot3"/>
+                            <rect class="sk-ui u1" x="438" y="80" width="120" height="28" rx="9" fill="url(#skGrad)"/>
+                            <path class="sk-ui u2 sk-wire" d="M498 108v18"/>
+                            <g class="sk-ui u3"><rect x="480" y="128" width="36" height="36" rx="9" transform="rotate(45 498 146)" fill="none" stroke="#fb923c" stroke-width="2.5"/></g>
+                            <path class="sk-ui u4 sk-wire" d="M480 164c-16 8-26 14-30 24"/>
+                            <rect class="sk-ui u5 sk-glass" x="410" y="190" width="80" height="26" rx="8"/>
+                            <path class="sk-ui u6 sk-wire" d="M516 164c16 8 26 14 30 24"/>
+                            <rect class="sk-ui u7" x="506" y="190" width="80" height="26" rx="8" fill="url(#skGrad)"/>
                         </g>
                     </svg>
                 </div>

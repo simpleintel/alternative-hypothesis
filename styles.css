@@ -2980,22 +2980,26 @@ img {
     overflow: visible;
 }
 
-/* Sticky note */
+/* Napkin */
 .enterprise-site .sk-note-paper {
-    fill: #fef3c7;
-    stroke: #fcd34d;
+    fill: #fffcf7;
+    stroke: #eeddd2;
     stroke-width: 1.5;
-    filter: drop-shadow(0 10px 18px rgba(84, 28, 70, 0.12));
+    filter: drop-shadow(0 12px 20px rgba(84, 28, 70, 0.14));
 }
 
-.enterprise-site .sk-note-fold {
-    fill: #fde68a;
+.enterprise-site .sk-note-stitch {
+    fill: none;
+    stroke: #e5c9ba;
+    stroke-width: 1.5;
+    stroke-dasharray: 5 6;
+    stroke-linecap: round;
 }
 
-/* Hand-drawn doodle strokes (drawn in sequence) */
+/* Hand-drawn schema strokes (drawn in sequence) */
 .enterprise-site .sk-doodle {
     fill: none;
-    stroke: #57534e;
+    stroke: #43203c;
     stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -3047,10 +3051,9 @@ img {
     96%, 100% { stroke-dashoffset: 460; opacity: 0; }
 }
 
-/* Arrow between note and app */
+/* Arrow between napkin and product */
 .enterprise-site .sk-arrow-line {
     fill: none;
-    stroke: var(--ent-brand);
     stroke-width: 4;
     stroke-linecap: round;
     stroke-dasharray: 130;
@@ -3096,16 +3099,30 @@ img {
     74%, 100% { transform: scale(0); opacity: 0; }
 }
 
-/* App window */
+/* Product window: dark plum, glowing */
 .enterprise-site .sk-app-frame {
-    fill: #ffffff;
-    stroke: var(--ent-line-strong);
+    fill: url(#skDark);
+    stroke: rgba(240, 171, 252, 0.35);
     stroke-width: 1.5;
-    filter: drop-shadow(0 16px 30px rgba(84, 28, 70, 0.16));
+    filter: drop-shadow(0 18px 36px rgba(217, 70, 239, 0.28));
 }
 
 .enterprise-site .sk-app-divider {
-    stroke: var(--ent-line);
+    stroke: rgba(240, 171, 252, 0.18);
+    stroke-width: 1.5;
+}
+
+/* Wires and glass cards inside the product */
+.enterprise-site .sk-wire {
+    fill: none;
+    stroke: rgba(253, 186, 116, 0.8);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+}
+
+.enterprise-site .sk-glass {
+    fill: rgba(240, 171, 252, 0.16);
+    stroke: rgba(240, 171, 252, 0.5);
     stroke-width: 1.5;
 }
 
@@ -3128,15 +3145,15 @@ img {
 .enterprise-site .sk-dot.dot2 { fill: #f97316; animation-name: skPop52; }
 .enterprise-site .sk-dot.dot3 { fill: #f59e0b; animation-name: skPop54; }
 
-/* UI elements popping in, mirroring the sketch */
+/* Product schema elements popping in, mirroring the napkin */
 .enterprise-site .sk-ui { transform-box: fill-box; transform-origin: center; animation: 8s ease-out infinite; }
-.enterprise-site .sk-ui.u1 { fill: var(--ent-brand); animation-name: skPop56; }
-.enterprise-site .sk-ui.u2 { fill: rgba(34, 19, 32, 0.14); animation-name: skPop60; }
-.enterprise-site .sk-ui.u3 { fill: rgba(34, 19, 32, 0.14); animation-name: skPop63; }
-.enterprise-site .sk-ui.u4 { fill: rgba(249, 115, 22, 0.35); animation-name: skPop66; }
-.enterprise-site .sk-ui.u5 { fill: rgba(34, 19, 32, 0.14); animation-name: skPop69; }
-.enterprise-site .sk-ui.u6 { fill: rgba(34, 19, 32, 0.1); animation-name: skPop72; }
-.enterprise-site .sk-ui.u7 { fill: var(--ent-brand-2); animation-name: skPop75; }
+.enterprise-site .sk-ui.u1 { animation-name: skPop56; }
+.enterprise-site .sk-ui.u2 { animation-name: skPop60; }
+.enterprise-site .sk-ui.u3 { animation-name: skPop63; }
+.enterprise-site .sk-ui.u4 { animation-name: skPop66; }
+.enterprise-site .sk-ui.u5 { animation-name: skPop69; }
+.enterprise-site .sk-ui.u6 { animation-name: skPop72; }
+.enterprise-site .sk-ui.u7 { animation-name: skPop75; }
 
 /* Pop-in keyframes: hidden until cue, pop, hold, fade at loop end */
 @keyframes skPop42 {
