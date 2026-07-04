@@ -1328,13 +1328,14 @@ img {
 
 .enterprise-site .hero-layout {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: var(--space-4xl);
+    grid-template-columns: 1fr;
     align-items: center;
 }
 
 .enterprise-site .hero-copy {
-    text-align: left;
+    text-align: center;
+    max-width: 820px;
+    margin: 0 auto;
 }
 
 .enterprise-site .hero-badge {
@@ -1354,7 +1355,7 @@ img {
     display: block;
     width: 72px;
     height: 4px;
-    margin-top: var(--space-lg);
+    margin: var(--space-lg) auto 0;
     border-radius: 4px;
     background: var(--ent-grad);
 }
@@ -1370,7 +1371,7 @@ img {
 }
 
 .enterprise-site .hero-cta {
-    justify-content: flex-start;
+    justify-content: center;
 }
 
 /* ---- Hero architecture visual ---- */
@@ -2961,4 +2962,272 @@ img {
     .enterprise-site .rt-item { opacity: 0; }
     .enterprise-site .mfg-spark { opacity: 0; }
     .enterprise-site .log-truck { transform: translateX(40px); }
+}
+
+/* =========================================
+   Hero — sketch-to-app scene
+   ========================================= */
+
+.enterprise-site .sketch-scene {
+    max-width: 660px;
+    margin: var(--space-2xl) auto 0;
+}
+
+.enterprise-site .sketch-scene svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+/* Sticky note */
+.enterprise-site .sk-note-paper {
+    fill: #fef3c7;
+    stroke: #fcd34d;
+    stroke-width: 1.5;
+    filter: drop-shadow(0 10px 18px rgba(84, 28, 70, 0.12));
+}
+
+.enterprise-site .sk-note-fold {
+    fill: #fde68a;
+}
+
+/* Hand-drawn doodle strokes (drawn in sequence) */
+.enterprise-site .sk-doodle {
+    fill: none;
+    stroke: #57534e;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 460;
+    stroke-dashoffset: 0;
+    animation: 8s linear infinite;
+}
+
+.enterprise-site .sk-doodle.d1 { animation-name: skD1; }
+.enterprise-site .sk-doodle.d2 { animation-name: skD2; }
+.enterprise-site .sk-doodle.d3 { animation-name: skD3; }
+.enterprise-site .sk-doodle.d4 { animation-name: skD4; }
+.enterprise-site .sk-doodle.d5 { animation-name: skD5; }
+.enterprise-site .sk-doodle.d6 { animation-name: skD6; }
+
+@keyframes skD1 {
+    0%, 2% { stroke-dashoffset: 460; opacity: 1; }
+    7%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 460; opacity: 0; }
+}
+
+@keyframes skD2 {
+    0%, 6% { stroke-dashoffset: 460; opacity: 1; }
+    17%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 460; opacity: 0; }
+}
+
+@keyframes skD3 {
+    0%, 16% { stroke-dashoffset: 460; opacity: 1; }
+    21%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 460; opacity: 0; }
+}
+
+@keyframes skD4 {
+    0%, 20% { stroke-dashoffset: 460; opacity: 1; }
+    25%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 460; opacity: 0; }
+}
+
+@keyframes skD5 {
+    0%, 24% { stroke-dashoffset: 460; opacity: 1; }
+    29%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 460; opacity: 0; }
+}
+
+@keyframes skD6 {
+    0%, 28% { stroke-dashoffset: 460; opacity: 1; }
+    33%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 460; opacity: 0; }
+}
+
+/* Arrow between note and app */
+.enterprise-site .sk-arrow-line {
+    fill: none;
+    stroke: var(--ent-brand);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 130;
+    stroke-dashoffset: 130;
+    animation: skArrow 8s linear infinite;
+}
+
+@keyframes skArrow {
+    0%, 34% { stroke-dashoffset: 130; opacity: 1; }
+    42%, 92% { stroke-dashoffset: 0; opacity: 1; }
+    96%, 100% { stroke-dashoffset: 130; opacity: 0; }
+}
+
+.enterprise-site .sk-arrow-head {
+    fill: var(--ent-brand-2);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: skPop42 8s ease-out infinite;
+}
+
+.enterprise-site .sk-spark {
+    fill: var(--ent-brand-2);
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: skSpark 8s ease-in-out infinite;
+}
+
+.enterprise-site .sk-spark.s2 { animation-name: skSpark2; }
+
+@keyframes skSpark {
+    0%, 38% { transform: scale(0); opacity: 0; }
+    44% { transform: scale(1.2); opacity: 1; }
+    52% { transform: scale(0.7); opacity: 0.7; }
+    60% { transform: scale(1); opacity: 1; }
+    68%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skSpark2 {
+    0%, 44% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    58% { transform: scale(0.6); opacity: 0.7; }
+    66% { transform: scale(1); opacity: 1; }
+    74%, 100% { transform: scale(0); opacity: 0; }
+}
+
+/* App window */
+.enterprise-site .sk-app-frame {
+    fill: #ffffff;
+    stroke: var(--ent-line-strong);
+    stroke-width: 1.5;
+    filter: drop-shadow(0 16px 30px rgba(84, 28, 70, 0.16));
+}
+
+.enterprise-site .sk-app-divider {
+    stroke: var(--ent-line);
+    stroke-width: 1.5;
+}
+
+.enterprise-site .sk-app {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: skAppIn 8s ease-out infinite;
+}
+
+@keyframes skAppIn {
+    0%, 40% { transform: scale(0.82); opacity: 0; }
+    48% { transform: scale(1.03); opacity: 1; }
+    52%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0.82); opacity: 0; }
+}
+
+/* Window dots */
+.enterprise-site .sk-dot { transform-box: fill-box; transform-origin: center; animation: 8s ease-out infinite; }
+.enterprise-site .sk-dot.dot1 { fill: #d946ef; animation-name: skPop50; }
+.enterprise-site .sk-dot.dot2 { fill: #f97316; animation-name: skPop52; }
+.enterprise-site .sk-dot.dot3 { fill: #f59e0b; animation-name: skPop54; }
+
+/* UI elements popping in, mirroring the sketch */
+.enterprise-site .sk-ui { transform-box: fill-box; transform-origin: center; animation: 8s ease-out infinite; }
+.enterprise-site .sk-ui.u1 { fill: var(--ent-brand); animation-name: skPop56; }
+.enterprise-site .sk-ui.u2 { fill: rgba(34, 19, 32, 0.14); animation-name: skPop60; }
+.enterprise-site .sk-ui.u3 { fill: rgba(34, 19, 32, 0.14); animation-name: skPop63; }
+.enterprise-site .sk-ui.u4 { fill: rgba(249, 115, 22, 0.35); animation-name: skPop66; }
+.enterprise-site .sk-ui.u5 { fill: rgba(34, 19, 32, 0.14); animation-name: skPop69; }
+.enterprise-site .sk-ui.u6 { fill: rgba(34, 19, 32, 0.1); animation-name: skPop72; }
+.enterprise-site .sk-ui.u7 { fill: var(--ent-brand-2); animation-name: skPop75; }
+
+/* Pop-in keyframes: hidden until cue, pop, hold, fade at loop end */
+@keyframes skPop42 {
+    0%, 42% { transform: scale(0); opacity: 0; }
+    46% { transform: scale(1.15); opacity: 1; }
+    49%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop50 {
+    0%, 50% { transform: scale(0); opacity: 0; }
+    54% { transform: scale(1.15); opacity: 1; }
+    57%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop52 {
+    0%, 52% { transform: scale(0); opacity: 0; }
+    56% { transform: scale(1.15); opacity: 1; }
+    59%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop54 {
+    0%, 54% { transform: scale(0); opacity: 0; }
+    58% { transform: scale(1.15); opacity: 1; }
+    61%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop56 {
+    0%, 56% { transform: scale(0); opacity: 0; }
+    60% { transform: scale(1.15); opacity: 1; }
+    63%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop60 {
+    0%, 60% { transform: scale(0); opacity: 0; }
+    64% { transform: scale(1.1); opacity: 1; }
+    67%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop63 {
+    0%, 63% { transform: scale(0); opacity: 0; }
+    67% { transform: scale(1.1); opacity: 1; }
+    70%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop66 {
+    0%, 66% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.1); opacity: 1; }
+    73%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop69 {
+    0%, 69% { transform: scale(0); opacity: 0; }
+    73% { transform: scale(1.1); opacity: 1; }
+    76%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop72 {
+    0%, 72% { transform: scale(0); opacity: 0; }
+    76% { transform: scale(1.1); opacity: 1; }
+    79%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@keyframes skPop75 {
+    0%, 75% { transform: scale(0); opacity: 0; }
+    79% { transform: scale(1.15); opacity: 1; }
+    82%, 92% { transform: scale(1); opacity: 1; }
+    97%, 100% { transform: scale(0); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .enterprise-site .sk-doodle,
+    .enterprise-site .sk-arrow-line,
+    .enterprise-site .sk-arrow-head,
+    .enterprise-site .sk-spark,
+    .enterprise-site .sk-app,
+    .enterprise-site .sk-dot,
+    .enterprise-site .sk-ui {
+        animation: none;
+    }
+
+    .enterprise-site .sk-doodle { stroke-dashoffset: 0; }
+    .enterprise-site .sk-arrow-line { stroke-dashoffset: 0; }
+    .enterprise-site .sk-spark { opacity: 0; }
 }
