@@ -142,13 +142,17 @@ function initNavigation() {
             if (!mobileNav) {
                 mobileNav = document.createElement('div');
                 mobileNav.className = 'mobile-nav';
+                const onIndex = !!document.querySelector('#how-it-works');
+                const base = onIndex ? '' : 'index.html';
                 mobileNav.innerHTML = `
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#how-it-works">How It Works</a></li>
-                        <li><a href="#why-us">Why Us</a></li>
+                        <li><a href="${base}#services">Services</a></li>
+                        <li><a href="${base}#how-it-works">How It Works</a></li>
+                        <li><a href="case-studies.html">Case Studies</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="team.html">Team</a></li>
                         <li><a href="tel:4257653765">(425) 765-3765</a></li>
-                        <li><a href="#contact" class="mobile-cta">Book a Free Strategy Call</a></li>
+                        <li><a href="${base}#contact" class="mobile-cta">Book a Free Strategy Call</a></li>
                     </ul>
                 `;
                 document.body.appendChild(mobileNav);
@@ -432,6 +436,12 @@ function initScrollAnimations() {
         '.different-card',
         '.journey-stage',
         '.industry-card',
+        '.case-study',
+        '.blog-post',
+        '.hire-step',
+        '.exp-item',
+        '.cred-card',
+        '.stat',
         '.cta-content'
     ];
 

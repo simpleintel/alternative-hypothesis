@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-676753769"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-676753769');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — Notes From Production AI | Alternative Hypothesis</title>
+    <meta name="description" content="Field notes on building production AI systems: computer vision, document intelligence, voice AI, geospatial analysis, and turning manual workflows into AI products.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="enterprise-site subpage">
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Alternative Hypothesis</a>
+            <ul class="nav-links">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="case-studies.html">Case Studies</a></li>
+                <li><a href="blog.html" class="nav-active">Blog</a></li>
+                <li><a href="team.html">Team</a></li>
+            </ul>
+            <a href="tel:4257653765" class="nav-phone">(425) 765-3765</a>
+            <a href="index.html#contact" class="nav-cta">Book a Strategy Call</a>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <header class="page-hero">
+        <div class="container">
+            <span class="section-label">Blog</span>
+            <h1>Notes From <span class="grad-text">Production AI</span></h1>
+            <p class="page-sub">Field notes from building AI systems that ship — what works, what breaks, and how messy real-world workflows become scalable products.</p>
+        </div>
+    </header>
+
+    <!-- Posts -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-list">
+
+                <article class="blog-post" id="manual-workflows-to-ai-products">
+                    <div class="post-meta">
+                        <span class="post-date">June 2026</span>
+                        <span class="post-tag">Strategy</span>
+                    </div>
+                    <h2>From Manual Workflows to AI Products: A Practical Guide</h2>
+                    <div class="post-body">
+                        <p>Every company we talk to has the same three problems, phrased differently: manual review takes too long, critical signals are easy to miss, and scaling operations with more people becomes expensive fast. These aren't technology problems at first — they're workflow problems. The technology question only matters once you've mapped the workflow honestly.</p>
+                        <p>Our approach is deliberately simple. First, <strong>map the workflow</strong>: where does information enter, who touches it, where does judgment actually get applied, and where do errors get expensive? Second, <strong>design the AI pipeline</strong> around those judgment points — not around whatever model is trending this quarter. Third, <strong>deploy a usable system</strong>, which means monitoring, guardrails, and a human escape hatch, not a notebook that worked once.</p>
+                        <p>A concrete example: measuring road construction progress from satellite imagery. The manual version was someone comparing images by eye and updating a spreadsheet. The AI version detects completed, in-progress, and planned segments and produces a progress score — 78% complete, up 32% since January — automatically, every time new imagery lands. Same workflow, same decision, radically different speed and consistency.</p>
+                        <p>If your workflow is visual, repetitive, document-heavy, or hard to scale, it's probably a candidate. The outcome you should demand from any AI project is the same one we hold ourselves to: better speed, higher consistency, and actionable operational insight. Anything less is a demo.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="no-ai-demos">
+                    <div class="post-meta">
+                        <span class="post-date">May 2026</span>
+                        <span class="post-tag">Opinion</span>
+                    </div>
+                    <h2>We Don't Build AI Demos. Here's Why That Distinction Matters.</h2>
+                    <div class="post-body">
+                        <p>A demo answers the question "can this work?" A production system answers a harder question: "does this keep working when the inputs are ugly, the volume is real, and nobody from the vendor is in the room?" Most AI projects die in the gap between those two questions.</p>
+                        <p>The gap looks like this. A demo classifies clean sample images; production means a multi-camera grading station on a warehouse floor processing used laptops all day, where lighting drifts and throughput matters. A demo transcribes a recorded call; production means live telephony with barge-in handling, where the system has to know the right moment to interject and what the next best action is. A demo extracts fields from one invoice; production means 128 legal invoices in a cycle, duplicate detection across vendors, and $41,280 in flagged charges someone has to trust enough to act on.</p>
+                        <p>Building for production changes your engineering decisions from day one. You design for the worst input, not the best. You instrument everything, because "the model seems off" is not a bug report. You plan the human handoff, because the goal isn't replacing judgment — it's spending human judgment only where it's actually needed.</p>
+                        <p>Our rule: if the system doesn't solve a real operational bottleneck under real conditions, it doesn't count as done. That's a higher bar, and it's the only one worth paying for.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="data-trapped-everywhere">
+                    <div class="post-meta">
+                        <span class="post-date">April 2026</span>
+                        <span class="post-tag">Data</span>
+                    </div>
+                    <h2>Your Most Valuable Data Is Trapped in Images, Calls, Emails, Maps, and Documents</h2>
+                    <div class="post-body">
+                        <p>Ask a company where its data lives and they'll point at a database. But watch how the business actually runs and you'll find the important signals somewhere else entirely: in photos taken on a warehouse floor, in phone calls with customers, in email threads where tone matters as much as content, in satellite and street-view imagery, and in PDFs nobody has time to read carefully.</p>
+                        <p>This is the data that used to be inaccessible to software — and it's exactly where modern AI earns its keep. Vision models turn a photo of a baseball card into player, year, brand, condition, and an estimated market value. Document intelligence turns a stack of legal invoices into structured line items with duplicate charges flagged. Voice AI turns a live call into intent, sentiment, and a recommended next action. Geospatial models turn imagery into "this roof needs repair" and "this road is 78% complete."</p>
+                        <p>The pattern across all of these is the same: <strong>unstructured input, structured decision</strong>. The AI's job is to convert the messy real-world signal into something your operations can grade, monitor, and act on.</p>
+                        <p>The practical takeaway: don't start your AI roadmap by asking what's in your database. Start by asking which decisions your team makes by looking at something — an image, a document, a map, a call. Those are the workflows where important signals are getting buried today, and where an AI system pays for itself fastest.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="visual-search-beyond-keywords">
+                    <div class="post-meta">
+                        <span class="post-date">March 2026</span>
+                        <span class="post-tag">Engineering</span>
+                    </div>
+                    <h2>When Keywords Fail: Visual Similarity Search With Vision Transformers</h2>
+                    <div class="post-body">
+                        <p>Trademark search is a perfect example of a problem that text search structurally cannot solve. Two logos can share zero words and still be confusingly similar — and that visual similarity is exactly what the legal question turns on. For years the answer was manual: page through registries and squint.</p>
+                        <p>The modern answer is embeddings. We built Trademark Lab to compute image embeddings with a vision transformer, so every mark becomes a point in a high-dimensional space where visual similarity is literally distance. Drop in a query logo, run a vector search across USPTO and EUIPO datasets, and get back the closest marks ranked by similarity score — 92%, 89%, 87% — each with its registration details attached.</p>
+                        <p>Two lessons from shipping this generalize well beyond trademarks. First, <strong>the embedding model matters more than the search infrastructure</strong>: vector databases are commodity now, but whether "similar" means what your users mean by similar depends entirely on the model and how you tune it. Second, <strong>scores need anchoring</strong>: an 87% similarity score is meaningless until users learn what an 87 looks like, so the UI has to show the evidence, not just the number.</p>
+                        <p>If your team searches for anything by describing it in words when what they really mean is "find me things that look like this" — products, parts, defects, designs — embedding search is the upgrade they don't know they can ask for.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="ai-in-the-loop-email">
+                    <div class="post-meta">
+                        <span class="post-date">February 2026</span>
+                        <span class="post-tag">Workflow AI</span>
+                    </div>
+                    <h2>The Best Place for AI Is Before the Mistake Happens</h2>
+                    <div class="post-body">
+                        <p>Most workplace AI reviews things after the fact: post-call analytics, quarterly audits, retrospective dashboards. Useful — but the highest-leverage moment is usually <em>before</em> the action, not after it.</p>
+                        <p>Corporate email is a case study. A conflict-heavy email — urgent tone, blame-adjacent phrasing, a hard "ASAP" — does its damage the moment it's sent. So we built an email intelligence assistant that works in the compose window: it corrects grammar and clarity, detects conflict-heavy wording and urgency, scores the message tone, and suggests more collaborative phrasing while the draft is still a draft. The send button comes with an AI check, not an AI apology.</p>
+                        <p>The same "intervene before, not after" pattern shows up across our work. In telephony, barge-in detection means the system acts <em>during</em> the call, when the next best action can still change the outcome. In legal billing, duplicate detection runs when the invoice arrives, before it's paid — which is how 23 duplicate charges worth $41,280 get caught instead of written off.</p>
+                        <p>When you evaluate an AI opportunity, ask where in the timeline it sits. Analysis after the fact is worth something. A system that catches the error while it's still cheap to fix is worth far more.</p>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta page-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Want This Thinking Applied to Your Workflows?</h2>
+                <p class="cta-sub">Book a free 30-minute strategy call. We'll tell you honestly where AI pays off in your business — and where it doesn't.</p>
+                <div class="inline-cta center">
+                    <a href="index.html#contact" class="btn btn-primary btn-large">Book a Free Strategy Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">Alternative Hypothesis</a>
+                    <p>AI consulting that ships. Clear roadmaps, working systems, measurable results.</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="index.html#services">Services</a></li>
+                            <li><a href="case-studies.html">Case Studies</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+                            <li><a href="team.html">Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="index.html#contact">Book a Strategy Call</a></li>
+                            <li><a href="tel:4257653765">(425) 765-3765</a></li>
+                            <li><a href="mailto:rahul@simpleintelligence.com">rahul@simpleintelligence.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Alternative Hypothesis. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
