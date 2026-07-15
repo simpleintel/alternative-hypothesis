@@ -4060,3 +4060,283 @@ img {
 .enterprise-site .team-photo {
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
+
+/* ==========================================================================
+   Monochrome Accents — white on black, no pink/orange
+   ========================================================================== */
+
+.enterprise-site {
+    --ent-brand: #ffffff;
+    --ent-brand-2: #a1a1aa;
+    --ent-grad: linear-gradient(135deg, #ffffff 0%, #d4d4d8 100%);
+}
+
+.enterprise-site ::selection {
+    background: #ffffff;
+    color: #0a090c;
+}
+
+/* Gradient text becomes a soft white shimmer */
+.enterprise-site .grad-text {
+    background: linear-gradient(90deg, #ffffff, #a1a1aa, #ffffff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.enterprise-site .logo {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: #ffffff;
+}
+
+/* ---- White buttons, black text ---- */
+.enterprise-site .nav-cta,
+.enterprise-site .btn-primary,
+.enterprise-site .sticky-cta {
+    background: #ffffff;
+    color: #0a090c;
+    box-shadow: 0 8px 24px rgba(255, 255, 255, 0.12);
+}
+
+.enterprise-site .nav-cta:hover,
+.enterprise-site .btn-primary:hover,
+.enterprise-site .sticky-cta:hover {
+    background: #f4f4f5;
+    color: #0a090c;
+    box-shadow: 0 12px 32px rgba(255, 255, 255, 0.2);
+}
+
+.enterprise-site .btn-primary::after {
+    background: linear-gradient(100deg, transparent, rgba(0, 0, 0, 0.12), transparent);
+}
+
+.enterprise-site .mobile-nav .mobile-cta {
+    background: #ffffff !important;
+    color: #0a090c !important;
+}
+
+/* ---- Elements that had white text on the pink gradient ---- */
+.enterprise-site .step-num,
+.enterprise-site .journey-node,
+.enterprise-site .hire-num,
+.enterprise-site .comparison-table th:last-child {
+    color: #0a090c;
+}
+
+.enterprise-site .step-num {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Neutral glows, backdrops, and hover borders ---- */
+.enterprise-site .enterprise-hero,
+.enterprise-site .page-hero {
+    background:
+        radial-gradient(circle at 15% 5%, rgba(255, 255, 255, 0.06) 0%, transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(255, 255, 255, 0.05) 0%, transparent 45%),
+        linear-gradient(180deg, #0a090c 0%, #131217 100%);
+}
+
+.enterprise-site .enterprise-hero::before,
+.enterprise-site .enterprise-hero::after {
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.07), transparent 65%);
+}
+
+.enterprise-site .enterprise-hero .hero-layout::before {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+.enterprise-site .hero-badge {
+    color: #e4e4e7;
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.enterprise-site .journey {
+    background:
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
+        radial-gradient(circle at 10% 85%, rgba(255, 255, 255, 0.04) 0%, transparent 45%),
+        var(--ent-bg);
+}
+
+.enterprise-site .problem-card:hover,
+.enterprise-site .service-card:hover,
+.enterprise-site .different-card:hover,
+.enterprise-site .security-badge:hover,
+.enterprise-site .journey-stage:hover,
+.enterprise-site .industry-card:hover {
+    border-color: rgba(255, 255, 255, 0.32);
+}
+
+.enterprise-site .comparison-table td:last-child {
+    background: rgba(255, 255, 255, 0.045);
+}
+
+/* ---- Chips and tags ---- */
+.enterprise-site .tag,
+.enterprise-site .journey-metric {
+    color: #e4e4e7;
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.enterprise-site .post-tag {
+    color: #e4e4e7;
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* ---- Journey path ---- */
+.enterprise-site .journey-runner {
+    fill: #ffffff;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.8));
+}
+
+.enterprise-site .journey-node {
+    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.12);
+}
+
+.enterprise-site .journey-node::after {
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ---- Engine diagram ---- */
+.enterprise-site .engine-diagram {
+    background:
+        radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.05) 0%, transparent 55%),
+        #121016;
+}
+
+.enterprise-site .engine-connector {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.35));
+}
+
+.enterprise-site .engine-connector .packet {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
+.enterprise-site .engine-stage-gpu .stage-body {
+    background: linear-gradient(180deg, #1b1a20 0%, #26242c 100%);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.enterprise-site .gpu-core {
+    background: #ffffff;
+}
+
+.enterprise-site .tf-layer {
+    background: rgba(24, 23, 28, 0.72);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.enterprise-site .tf-name {
+    color: #f4f4f5;
+}
+
+.enterprise-site .attention-svg line {
+    stroke: #d4d4d8;
+}
+
+.enterprise-site .tf-flow {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+}
+
+.enterprise-site .vector-grid .vector-cell,
+.enterprise-site .vector-cell {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.4));
+}
+
+/* ---- Solution GPU card figure ---- */
+.enterprise-site .gpu-card-anim {
+    filter: drop-shadow(0 22px 44px rgba(0, 0, 0, 0.5));
+}
+
+.enterprise-site .gpu-card-body {
+    background: linear-gradient(145deg, #232228 0%, #17161b 100%);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.enterprise-site .gpu-fan {
+    background: radial-gradient(circle, #17161b 38%, #2b2a31 40%, #17161b 70%);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.enterprise-site .gpu-fan-blades {
+    background: conic-gradient(from 0deg,
+        rgba(255, 255, 255, 0.05) 0deg, rgba(255, 255, 255, 0.45) 30deg, rgba(255, 255, 255, 0.05) 60deg,
+        rgba(255, 255, 255, 0.05) 90deg, rgba(255, 255, 255, 0.45) 120deg, rgba(255, 255, 255, 0.05) 150deg,
+        rgba(255, 255, 255, 0.05) 180deg, rgba(255, 255, 255, 0.45) 210deg, rgba(255, 255, 255, 0.05) 240deg,
+        rgba(255, 255, 255, 0.05) 270deg, rgba(255, 255, 255, 0.45) 300deg, rgba(255, 255, 255, 0.05) 330deg);
+}
+
+.enterprise-site .gpu-fan-blades::after {
+    background: #e4e4e7;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+}
+
+.enterprise-site .gpu-trace path {
+    stroke: #d4d4d8;
+}
+
+.enterprise-site .gpu-trace path:nth-child(2) {
+    stroke: #71717a;
+}
+
+.enterprise-site .gpu-card-glow {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.14), transparent 70%);
+}
+
+/* ---- Sketch scene (hero) ---- */
+.enterprise-site .sk-app-frame {
+    stroke: rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 18px 36px rgba(0, 0, 0, 0.55));
+}
+
+.enterprise-site .sk-app-divider {
+    stroke: rgba(255, 255, 255, 0.18);
+}
+
+.enterprise-site .sk-wire {
+    stroke: rgba(228, 228, 231, 0.8);
+}
+
+.enterprise-site .sk-glass {
+    fill: rgba(255, 255, 255, 0.12);
+    stroke: rgba(255, 255, 255, 0.45);
+}
+
+.enterprise-site .sk-dot.dot1 { fill: #ffffff; }
+.enterprise-site .sk-dot.dot2 { fill: #a1a1aa; }
+.enterprise-site .sk-dot.dot3 { fill: #71717a; }
+
+/* ---- Industry scenes: monochrome ---- */
+.enterprise-site .ind-manufacturing,
+.enterprise-site .ind-healthcare,
+.enterprise-site .ind-finance,
+.enterprise-site .ind-logistics,
+.enterprise-site .ind-retail,
+.enterprise-site .ind-services {
+    --ind-hue-1: #d4d4d8;
+    --ind-hue-2: #ffffff;
+    --ind-soft: rgba(255, 255, 255, 0.08);
+}
+
+.enterprise-site .industry-scene {
+    background:
+        radial-gradient(circle at 20% 15%, var(--ind-soft) 0%, transparent 55%),
+        linear-gradient(160deg, #1a191e 0%, #232228 100%);
+}
+
+.enterprise-site .industry-scene .scene-fill-dark { fill: #1a191e; }
+.enterprise-site .industry-scene .scene-line-dark { stroke: rgba(10, 9, 12, 0.55); }
+.enterprise-site .industry-scene .scene-check-mark { stroke: #0a090c; }
+
+/* ---- Metric numbers: solid white ---- */
+.enterprise-site .metric-value,
+.enterprise-site .stat-value {
+    background: none;
+    -webkit-text-fill-color: currentColor;
+    color: #ffffff;
+}
