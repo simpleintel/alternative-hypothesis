@@ -3766,6 +3766,39 @@ img {
     line-height: 1.5;
 }
 
+/* ---- Case study media ---- */
+.enterprise-site .case-media {
+    margin: 0 0 var(--space-lg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--ent-line);
+}
+
+.enterprise-site .case-media img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.enterprise-site .case-featured .case-media {
+    margin-bottom: var(--space-xl);
+}
+
+/* ---- Team photo ---- */
+.enterprise-site .team-photo {
+    width: 160px;
+    border-radius: 28px;
+    overflow: hidden;
+    margin-bottom: var(--space-lg);
+    box-shadow: 0 12px 32px rgba(217, 70, 239, 0.25);
+}
+
+.enterprise-site .team-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 /* ---- Subpage responsive ---- */
 @media (max-width: 900px) {
     .enterprise-site .case-grid {
@@ -3814,4 +3847,216 @@ img {
     .enterprise-site .exp-dates {
         margin-left: 0;
     }
+}
+
+/* ==========================================================================
+   Dark Theme — Black
+   ========================================================================== */
+
+.enterprise-site {
+    --ent-bg: #0a090c;
+    --ent-bg-soft: #100e13;
+    --ent-bg-tint: #1a1420;
+    --ent-ink: #f5f2f7;
+    --ent-ink-soft: #b9aec2;
+    --ent-ink-mute: #857a90;
+    --ent-line: #241f2b;
+    --ent-line-strong: #362e40;
+
+    background: var(--ent-bg);
+    color: var(--ent-ink);
+}
+
+.enterprise-site ::selection {
+    background: var(--ent-brand);
+    color: #ffffff;
+}
+
+/* ---- Navigation ---- */
+.enterprise-site .nav {
+    background: rgba(10, 9, 12, 0.78);
+    backdrop-filter: blur(18px) saturate(1.4);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+}
+
+.enterprise-site .nav.scrolled {
+    border-bottom-color: var(--ent-line);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.enterprise-site .mobile-nav {
+    background: rgba(10, 9, 12, 0.98) !important;
+}
+
+.enterprise-site .mobile-menu-btn span {
+    background: var(--ent-ink);
+}
+
+/* ---- Buttons ---- */
+.enterprise-site .btn-ghost {
+    background: var(--ent-bg-soft);
+    color: var(--ent-ink);
+    border-color: var(--ent-line-strong);
+}
+
+.enterprise-site .btn-ghost:hover {
+    background: var(--ent-bg-tint);
+    border-color: var(--ent-brand);
+    color: #ffffff;
+}
+
+/* ---- Heroes ---- */
+.enterprise-site .enterprise-hero,
+.enterprise-site .page-hero {
+    background:
+        radial-gradient(circle at 15% 5%, rgba(217, 70, 239, 0.16) 0%, transparent 42%),
+        radial-gradient(circle at 88% 12%, rgba(249, 115, 22, 0.14) 0%, transparent 45%),
+        linear-gradient(180deg, #0a090c 0%, #120d15 100%);
+}
+
+.enterprise-site .enterprise-hero::before {
+    background: radial-gradient(circle, rgba(217, 70, 239, 0.16), transparent 65%);
+}
+
+.enterprise-site .enterprise-hero::after {
+    background: radial-gradient(circle, rgba(249, 115, 22, 0.14), transparent 65%);
+}
+
+.enterprise-site .hero-counter {
+    color: var(--ent-ink-soft);
+}
+
+/* ---- Cards (glass on black) ---- */
+.enterprise-site .problem-card,
+.enterprise-site .service-card,
+.enterprise-site .different-card,
+.enterprise-site .cta-form {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: var(--ent-line);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.enterprise-site .problem-card:hover,
+.enterprise-site .service-card:hover,
+.enterprise-site .different-card:hover {
+    border-color: rgba(217, 70, 239, 0.45);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.enterprise-site .security-badge {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: var(--ent-line);
+    color: var(--ent-ink);
+}
+
+.enterprise-site .security-badge:hover {
+    border-color: rgba(217, 70, 239, 0.45);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+.enterprise-site .industry-card {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: var(--ent-line);
+}
+
+.enterprise-site .industry-card:hover {
+    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.55);
+}
+
+.enterprise-site .industry-scene {
+    background:
+        radial-gradient(circle at 20% 15%, var(--ind-soft) 0%, transparent 55%),
+        linear-gradient(160deg, color-mix(in srgb, var(--ind-hue-1) 20%, #16121a) 0%, color-mix(in srgb, var(--ind-hue-2) 24%, #16121a) 100%);
+}
+
+.enterprise-site .industry-scene .scene-fill-dark { fill: #16121a; }
+
+.enterprise-site .journey-stage {
+    background: rgba(20, 17, 24, 0.85);
+    border-color: var(--ent-line);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+.enterprise-site .journey-stage:hover {
+    border-color: rgba(217, 70, 239, 0.45);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55);
+}
+
+/* ---- Engine diagram ---- */
+.enterprise-site .engine-diagram {
+    background:
+        radial-gradient(circle at 50% -10%, rgba(217, 70, 239, 0.1) 0%, transparent 55%),
+        #121016;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.enterprise-site .token-stream .token {
+    background: var(--ent-bg-tint);
+    border-color: var(--ent-line-strong);
+}
+
+/* ---- Comparison table ---- */
+.enterprise-site .comparison-wrap {
+    box-shadow: 0 16px 44px rgba(0, 0, 0, 0.5);
+}
+
+.enterprise-site .comparison-table {
+    background: #121016;
+}
+
+.enterprise-site .comparison-table td:last-child {
+    background: rgba(217, 70, 239, 0.07);
+}
+
+/* ---- Forms ---- */
+.enterprise-site .form-group input,
+.enterprise-site .form-group textarea {
+    background: var(--ent-bg-tint);
+    border-color: var(--ent-line-strong);
+    color: var(--ent-ink);
+}
+
+/* ---- Sketch scene: keep the napkin paper, dim its shadow ---- */
+.enterprise-site .sk-note-paper {
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.5));
+}
+
+/* ---- GPU figure caption ---- */
+.enterprise-site .gpu-card-figure figcaption,
+.enterprise-site .engine-foot {
+    color: var(--ent-ink-mute);
+}
+
+/* ---- Subpage cards ---- */
+.enterprise-site .case-study,
+.enterprise-site .blog-post,
+.enterprise-site .team-card,
+.enterprise-site .exp-item,
+.enterprise-site .hire-step,
+.enterprise-site .cred-card,
+.enterprise-site .stat {
+    background: rgba(255, 255, 255, 0.035);
+    border-color: var(--ent-line);
+}
+
+.enterprise-site .case-featured {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.enterprise-site .case-study:hover {
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.enterprise-site .case-metrics {
+    background: var(--ent-bg-tint);
+    border-color: var(--ent-line-strong);
+}
+
+.enterprise-site .case-media,
+.enterprise-site .team-photo {
+    border-color: var(--ent-line-strong);
+}
+
+.enterprise-site .team-photo {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }

@@ -109,9 +109,51 @@
                     </div>
                 </article>
 
-                <article class="blog-post" id="ai-in-the-loop-email">
+                <article class="blog-post" id="hardware-plus-ai">
                     <div class="post-meta">
                         <span class="post-date">February 2026</span>
+                        <span class="post-tag">Engineering</span>
+                    </div>
+                    <h2>Hardware + AI: What We Learned Building a Multi-Camera Grading Station</h2>
+                    <div class="post-body">
+                        <p>Most AI projects live entirely in software. Some of the highest-value ones don't. When we built the used-laptop grading station — a multi-camera rig for AI-assisted cosmetic inspection — the model was maybe a third of the project. The rest was physics, and the physics is where these projects are won or lost.</p>
+                        <p><strong>Fix the capture, and the model's job gets easy.</strong> A grading model that has to cope with random angles, mixed lighting, and inconsistent framing needs to be far smarter than one that sees every laptop from the same fixed cameras under the same lights. We spent our effort making the input boring: rigid camera mounts, controlled lighting, a repeatable placement guide. Consistent capture converts a hard vision problem into a manageable one.</p>
+                        <p><strong>Design for throughput, not for the demo.</strong> A station that grades one laptop beautifully but takes three minutes per unit is a science project. The workflow — place, capture, grade, route — has to keep pace with a real intake line, which shapes everything from camera trigger timing to how results get written back to the operations system.</p>
+                        <p><strong>Consistency is the product.</strong> The pitch was never "the AI is smarter than your graders." It's that the AI gives the same answer at 9 a.m. and 4 p.m., on Monday and Friday, for the hundredth unit and the ten-thousandth. In grading workflows, that repeatability is what eliminates disputes and expensive errors.</p>
+                        <p>If your operation touches physical objects — grading, inspection, counting, sorting — don't let anyone tell you it's just a model problem. It's a capture problem, a throughput problem, and a consistency problem. The model comes after.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="barge-in-voice-ai">
+                    <div class="post-meta">
+                        <span class="post-date">January 2026</span>
+                        <span class="post-tag">Voice AI</span>
+                    </div>
+                    <h2>Barge-In: The Small Feature That Makes or Breaks Voice AI</h2>
+                    <div class="post-body">
+                        <p>Everyone evaluating voice AI asks about transcription accuracy. Almost nobody asks the question that actually determines whether callers tolerate the system: how does it handle interruption?</p>
+                        <p>Barge-in — a caller speaking over the system — is where telephony AI gets hard. The system has to detect the interruption fast, stop talking, understand what the caller actually said, and decide what to do next, all in real time on a live call. Get it wrong in one direction and the system talks over people, which callers experience as disrespect. Get it wrong in the other and every background noise derails the flow.</p>
+                        <p>In the Asterix telephony work, we treated barge-in as a first-class signal rather than an error condition. The live analysis tracks intent and sentiment continuously, so when a barge-in is detected — say, 47 seconds into the call — the system already has context for what the caller is trying to do, and can update the next best action instead of restarting a script. The workflow becomes: call start, barge-in, AI process, action taken. The interruption <em>is</em> the data.</p>
+                        <p>The broader lesson applies to any real-time AI: the awkward edge case that everyone deprioritizes is usually the thing users judge the whole system on. Handle the interruption well and the system feels intelligent. Handle it badly and no transcription accuracy number will save you.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="bing-to-document-ai">
+                    <div class="post-meta">
+                        <span class="post-date">December 2025</span>
+                        <span class="post-tag">Background</span>
+                    </div>
+                    <h2>What Five Years on Bing's Document Understanding Platform Taught Us About Document AI</h2>
+                    <div class="post-body">
+                        <p>Before Simple Intelligence, our founder spent 2012 to 2017 as a software development engineer on Microsoft Bing, building document-processing infrastructure — including a DOM tree parser for the Bing Document Understanding Platform that ran roughly 10% faster than its predecessor. That sounds far from today's document AI. It isn't. It's the foundation of it.</p>
+                        <p>Web-scale document understanding teaches you three things that transfer directly to every invoice, contract, and architectural plan we process today. First, <strong>structure is everything</strong>: a document isn't a bag of words, it's a tree — sections, tables, line items, annotations — and extraction that ignores the structure produces confident nonsense. Second, <strong>performance compounds</strong>: a 10% faster parser sounds incremental until you multiply it across billions of documents; the same math applies when a client's invoice pipeline runs nightly against thousands of PDFs. Third, <strong>the ugly documents are the job</strong>: at web scale there is no clean input, so you build for malformed markup, scanned artifacts, and inconsistent layouts from the start.</p>
+                        <p>Modern language models have made document extraction dramatically more capable, but they haven't changed those fundamentals. Our legal bill audit system works because it respects invoice structure — vendors, line items, PO references — not because a model reads the PDF like prose. The lesson from Bing still holds: document AI is an engineering discipline wearing a machine-learning costume.</p>
+                    </div>
+                </article>
+
+                <article class="blog-post" id="ai-in-the-loop-email">
+                    <div class="post-meta">
+                        <span class="post-date">November 2025</span>
                         <span class="post-tag">Workflow AI</span>
                     </div>
                     <h2>The Best Place for AI Is Before the Mistake Happens</h2>
