@@ -4032,99 +4032,94 @@ img {
 }
 
 .enterprise-site .engine-stage-gpu .stage-body {
-    background: linear-gradient(180deg, #1b1a20 0%, #26242c 100%);
-    border-color: rgba(17, 17, 19, 0.5);
+    background: linear-gradient(180deg, #f4f4f5 0%, #e9e9ec 100%);
+    border-color: rgba(17, 17, 19, 0.35);
 }
 
 .enterprise-site .gpu-core {
-    background: #ffffff;
+    background: #111113;
 }
 
 .enterprise-site .tf-layer {
-    background: rgba(24, 23, 28, 0.72);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(17, 17, 19, 0.3);
 }
 
 .enterprise-site .tf-name {
-    color: #f4f4f5;
+    color: #111113;
 }
 
 .enterprise-site .attention-svg line {
-    stroke: #d4d4d8;
+    stroke: #52525b;
 }
 
 .enterprise-site .tf-flow {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), transparent);
+    background: linear-gradient(90deg, transparent, rgba(17, 17, 19, 0.15), transparent);
 }
 
-/* ---- Solution GPU card figure: dark hardware on white page ---- */
+/* ---- Solution GPU card figure: light hardware on white page ---- */
 .enterprise-site .gpu-card-anim {
-    filter: drop-shadow(0 22px 44px rgba(17, 17, 19, 0.2));
+    filter: drop-shadow(0 22px 44px rgba(17, 17, 19, 0.14));
 }
 
 .enterprise-site .gpu-card-body {
-    background: linear-gradient(145deg, #232228 0%, #17161b 100%);
-    border-color: rgba(17, 17, 19, 0.4);
+    background: linear-gradient(145deg, #f7f7f8 0%, #e9e9ec 100%);
+    border-color: rgba(17, 17, 19, 0.3);
 }
 
 .enterprise-site .gpu-fan {
-    background: radial-gradient(circle, #17161b 38%, #2b2a31 40%, #17161b 70%);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: radial-gradient(circle, #e9e9ec 38%, #d5d5da 40%, #e9e9ec 70%);
+    border-color: rgba(17, 17, 19, 0.3);
 }
 
 .enterprise-site .gpu-fan-blades {
     background: conic-gradient(from 0deg,
-        rgba(255, 255, 255, 0.05) 0deg, rgba(255, 255, 255, 0.45) 30deg, rgba(255, 255, 255, 0.05) 60deg,
-        rgba(255, 255, 255, 0.05) 90deg, rgba(255, 255, 255, 0.45) 120deg, rgba(255, 255, 255, 0.05) 150deg,
-        rgba(255, 255, 255, 0.05) 180deg, rgba(255, 255, 255, 0.45) 210deg, rgba(255, 255, 255, 0.05) 240deg,
-        rgba(255, 255, 255, 0.05) 270deg, rgba(255, 255, 255, 0.45) 300deg, rgba(255, 255, 255, 0.05) 330deg);
+        rgba(17, 17, 19, 0.04) 0deg, rgba(17, 17, 19, 0.4) 30deg, rgba(17, 17, 19, 0.04) 60deg,
+        rgba(17, 17, 19, 0.04) 90deg, rgba(17, 17, 19, 0.4) 120deg, rgba(17, 17, 19, 0.04) 150deg,
+        rgba(17, 17, 19, 0.04) 180deg, rgba(17, 17, 19, 0.4) 210deg, rgba(17, 17, 19, 0.04) 240deg,
+        rgba(17, 17, 19, 0.04) 270deg, rgba(17, 17, 19, 0.4) 300deg, rgba(17, 17, 19, 0.04) 330deg);
 }
 
 .enterprise-site .gpu-fan-blades::after {
-    background: #e4e4e7;
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    background: #111113;
+    box-shadow: 0 0 8px rgba(17, 17, 19, 0.4);
 }
 
 .enterprise-site .gpu-trace path {
-    stroke: #d4d4d8;
+    stroke: #52525b;
 }
 
 .enterprise-site .gpu-trace path:nth-child(2) {
-    stroke: #71717a;
+    stroke: #a1a1aa;
 }
 
 .enterprise-site .gpu-card-glow {
-    background: radial-gradient(circle at 50% 50%, rgba(17, 17, 19, 0.1), transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(17, 17, 19, 0.08), transparent 70%);
 }
 
-/* ---- Sketch scene (hero): dark app window on white page ---- */
+/* ---- Sketch scene (hero): light app window on white page ---- */
 .enterprise-site .sk-app-frame {
-    stroke: rgba(17, 17, 19, 0.45);
-    filter: drop-shadow(0 18px 36px rgba(17, 17, 19, 0.28));
+    fill: #ffffff;
+    stroke: rgba(17, 17, 19, 0.4);
+    filter: drop-shadow(0 18px 36px rgba(17, 17, 19, 0.16));
 }
 
 .enterprise-site .sk-app-divider {
-    stroke: rgba(255, 255, 255, 0.18);
+    stroke: rgba(17, 17, 19, 0.18);
 }
 
 .enterprise-site .sk-wire {
-    stroke: rgba(228, 228, 231, 0.8);
+    stroke: rgba(17, 17, 19, 0.55);
 }
 
 .enterprise-site .sk-glass {
-    fill: rgba(255, 255, 255, 0.12);
-    stroke: rgba(255, 255, 255, 0.45);
+    fill: rgba(17, 17, 19, 0.06);
+    stroke: rgba(17, 17, 19, 0.4);
 }
 
-.enterprise-site .sk-dot.dot1 { fill: #ffffff; }
-.enterprise-site .sk-dot.dot2 { fill: #a1a1aa; }
-.enterprise-site .sk-dot.dot3 { fill: #71717a; }
-
-/* Filled UI blocks inside the dark app window stay white */
-.enterprise-site .sk-ui.u1,
-.enterprise-site .sk-ui.u7 {
-    fill: #ffffff;
-}
+.enterprise-site .sk-dot.dot1 { fill: #111113; }
+.enterprise-site .sk-dot.dot2 { fill: #52525b; }
+.enterprise-site .sk-dot.dot3 { fill: #a1a1aa; }
 
 .enterprise-site .sk-note-paper {
     filter: drop-shadow(0 12px 20px rgba(17, 17, 19, 0.14));
