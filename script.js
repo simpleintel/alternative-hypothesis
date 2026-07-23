@@ -275,7 +275,11 @@ function initFormHandling() {
 
                 if (response.ok) {
                     // Google Ads conversion tracking
-                    gtag('event', 'conversion', {'send_to': 'AW-676753769/c7YdCOO9ndoBEOni2cIC'});
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-18338912927/bNRRCM-K49McEJ-11qhE',
+                        'value': 1.0,
+                        'currency': 'USD'
+                    });
 
                     submitBtn.textContent = 'Message Sent!';
                     submitBtn.style.background = '#22c55e';
@@ -343,7 +347,11 @@ function initScorecardForm() {
             });
 
             if (response.ok) {
-                gtag('event', 'conversion', {'send_to': 'AW-676753769/c7YdCOO9ndoBEOni2cIC'});
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-18338912927/bNRRCM-K49McEJ-11qhE',
+                    'value': 1.0,
+                    'currency': 'USD'
+                });
 
                 submitBtn.textContent = 'Check Your Inbox!';
                 submitBtn.style.background = '#22c55e';
