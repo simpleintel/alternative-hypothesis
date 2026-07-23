@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initStickyCTA();
     initEngineDiagram();
+    initConversionClicks();
 });
 
 // ==========================================================================
@@ -466,4 +467,34 @@ function initScrollAnimations() {
         transform: translateY(0) !important;
     }`;
     document.head.appendChild(style);
+}
+
+// ==========================================================================
+// Google Ads Conversion — click-based (phone / email leads)
+// ==========================================================================
+
+function gtag_report_conversion(url) {
+    if (typeof gtag !== 'function') return false;
+    var callback = function () {
+        if (typeof(url) != 'undefined') {
+            window.location = url;
+        }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18338912927/bNRRCM-K49McEJ-11qhE',
+        'value': 1.0,
+        'currency': 'USD',
+        'event_callback': callback
+    });
+    return false;
+}
+
+function initConversionClicks() {
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+        if (!a) return;
+        // Fire the lead-form conversion event; let the tel:/mailto: link
+        // open the dialer/mail client normally (no page navigation needed).
+        gtag_report_conversion();
+    });
 }
